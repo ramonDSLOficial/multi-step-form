@@ -1,10 +1,31 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { Container, FormContanier } from './styles';
+import Title from '../../components/Title';
+import Paragraph from '../../components/Paragraph';
+import { Input } from '../../components/Input';
 
 const SecondStep: React.FC = () => {
 	return (
 		<Container>
+      <Title>Select your plan</Title>
+      <Paragraph>You have the option of monthly or yearly billing.</Paragraph>
+
+      <FormContanier>
+        <section>
+          
+        </section>
+
+        <section>
+          <Input.Root $type='checkbox' inputClassName='toggle'>
+            <Input.Label label='monthly' />
+
+            <Input.InputElement />
+            
+            <Input.Label label='yearly' />
+          </Input.Root>
+        </section>
+      </FormContanier>
 		</Container>
 	);
 };

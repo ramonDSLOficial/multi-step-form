@@ -14,7 +14,7 @@ const FirstStep: React.FC = () => {
 			</Paragraph>
 
 			<section>
-				<Input.Root $type="text" error="errado">
+				<Input.Root $type="text" error="exerrado">
 					<Input.Label label="name" />
 					<Input.InputElement placeholder="e.g. Stephen King" />
 					<Input.Error />

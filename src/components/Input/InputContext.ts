@@ -10,7 +10,7 @@ export type InputType =
 	| 'radio';
 
 interface InputContextData {
-	id: string;
+	inputId: string;
 	error?: string;
 	$type: InputType;
 	inputClassName?: string;

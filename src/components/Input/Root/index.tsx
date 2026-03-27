@@ -15,9 +15,9 @@ const Root: React.FunctionComponent<RootProps> = ({
 	inputClassName,
 	children,
 }) => {
-	const id = useId();
+	const inputId = useId();
 	return (
-		<InputContext.Provider value={{ id, $type, error, inputClassName }}>
+		<InputContext.Provider value={{ inputId, $type, error, inputClassName }}>
 			<Container className={`${inputClassName} ${className}`} $type={$type}>
 				{children}
 			</Container>
