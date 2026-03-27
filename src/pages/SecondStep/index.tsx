@@ -8,24 +8,55 @@ import { Input } from '../../components/Input';
 const SecondStep: React.FC = () => {
 	return (
 		<Container>
-      <Title>Select your plan</Title>
-      <Paragraph>You have the option of monthly or yearly billing.</Paragraph>
+			<Title>Select your plan</Title>
+			<Paragraph>You have the option of monthly or yearly billing.</Paragraph>
 
-      <FormContanier>
-        <section>
-          
-        </section>
+			<FormContanier>
+				<section>
+					<Input.Root $type="radio" inputClassName='plan'>
+						<Input.Icon
+							source="/public/images/icon-arcade.svg"
+							alt="arcade plan icon"
+						/>
+						<Input.Label label="Arcade" />
+						<Input.Description>$9/mo</Input.Description>
+						<Input.Description>2 months free</Input.Description>
+						<Input.InputElement name="plan" />
+					</Input.Root>
 
-        <section>
-          <Input.Root $type='checkbox' inputClassName='toggle'>
-            <Input.Label label='monthly' />
+					<Input.Root $type="radio" inputClassName='plan'>
+						<Input.Icon
+							source="/public/images/icon-advanced.svg"
+							alt="advanced plan icon "
+						/>
+						<Input.Label label="Advanced" />
+						<Input.Description>$12/mo</Input.Description>
+						<Input.Description>2 months free</Input.Description>
+						<Input.InputElement name="plan" />
+					</Input.Root>
 
-            <Input.InputElement />
-            
-            <Input.Label label='yearly' />
-          </Input.Root>
-        </section>
-      </FormContanier>
+					<Input.Root $type="radio" inputClassName='plan'>
+						<Input.Icon
+							source="/public/images/icon-pro.svg"
+							alt="pro plan icon"
+						/>
+						<Input.Label label="Pro" />
+						<Input.Description>$15/mo</Input.Description>
+						<Input.Description>2 months free</Input.Description>
+						<Input.InputElement name="plan" />
+					</Input.Root>
+				</section>
+
+				<section>
+					<Input.Root $type="checkbox" inputClassName="toggle">
+						<Input.Label label="monthly" />
+
+						<Input.InputElement />
+
+						<Input.Label label="yearly" />
+					</Input.Root>
+				</section>
+			</FormContanier>
 		</Container>
 	);
 };
