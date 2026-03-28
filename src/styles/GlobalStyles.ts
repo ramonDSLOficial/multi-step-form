@@ -1,13 +1,13 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-    /* @font-face {
+    @font-face {
         font-family: "Ubuntu";
-        src: url("./public/fonts/Ubuntu-Regular.ttf") format("truetype"),
-            url("./public/fonts/Ubuntu-Medium.ttf") format("truetype"),
-            url("./public/fonts/Ubuntu-Bold.ttf") format("truetype");
+        src: url("/fonts/Ubuntu-Regular.ttf") format("truetype"),
+            url("/fonts/Ubuntu-Medium.ttf") format("truetype"),
+            url("/fonts/Ubuntu-Bold.ttf") format("truetype");
         font-weight: normal;
-    } */
+    }
 
     * {
         padding: 0;
