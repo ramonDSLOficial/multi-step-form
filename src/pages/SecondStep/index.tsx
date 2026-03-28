@@ -15,7 +15,7 @@ const SecondStep: React.FC = () => {
 				<section>
 					<Input.Root $type="radio" inputClassName='plan'>
 						<Input.Icon
-							source="/public/images/icon-arcade.svg"
+							source="/images/icon-arcade.svg"
 							alt="arcade plan icon"
 						/>
 						<Input.Label label="Arcade" />
@@ -26,7 +26,7 @@ const SecondStep: React.FC = () => {
 
 					<Input.Root $type="radio" inputClassName='plan'>
 						<Input.Icon
-							source="/public/images/icon-advanced.svg"
+							source="/images/icon-advanced.svg"
 							alt="advanced plan icon "
 						/>
 						<Input.Label label="Advanced" />
@@ -37,7 +37,7 @@ const SecondStep: React.FC = () => {
 
 					<Input.Root $type="radio" inputClassName='plan'>
 						<Input.Icon
-							source="/public/images/icon-pro.svg"
+							source="/images/icon-pro.svg"
 							alt="pro plan icon"
 						/>
 						<Input.Label label="Pro" />
