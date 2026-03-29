@@ -6,3 +6,5 @@ futuras fontes:
 2rem
 4rem
 */ 
+
+ver o a questão da imagem do SlideBar

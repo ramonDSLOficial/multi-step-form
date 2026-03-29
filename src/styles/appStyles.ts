@@ -13,5 +13,6 @@ export const Main = styled.main`
     flex-direction: column;
     align-items: center;
     width: inherit;
+    height: 90%;
 `;
 
