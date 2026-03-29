@@ -15,7 +15,8 @@ declare module "styled-components" {
                 second: string,
                 third: string,
                 fourth: string,
-                fifth: string,
+                white: string,
+                black: string
             },
         },
         font: {

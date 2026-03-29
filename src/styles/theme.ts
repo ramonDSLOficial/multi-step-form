@@ -19,7 +19,8 @@ export const theme: DefaultTheme = {
             second: "#d6d9e6ff",
             third: "#f0f6ffff",
             fourth: "#fafbffff",
-            fifth: "#ffffffff"
+            white: "#ffffffff",
+            black: "#000"
         }
     },
     font: {
