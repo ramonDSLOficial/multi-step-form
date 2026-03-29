@@ -10,7 +10,7 @@ export const Container = styled.div`
 `;
 
 export const Stage = styled.p`
-	color: ${(props) => props.theme.colors.neutral.fifth};
+	color: ${(props) => props.theme.colors.neutral.white};
 	font-size: 1.2rem;
 	font-weight: ${(props) => props.theme.font.weight.secundary};
 	border: 1px solid ${(props) => props.theme.colors.neutral.third};
