@@ -7,9 +7,9 @@ interface StepSummaryProps extends HTMLAttributes<HTMLDivElement> {
     name: string
 }
 
-const StepSummary: React.FC<StepSummaryProps> = ({ stage, name }) => {
+const StepSummary: React.FC<StepSummaryProps> = ({ stage, name, id }) => {
   return (
-    <Container>
+    <Container id={id}>
         <Stage>{stage}</Stage>
 
         <div>
