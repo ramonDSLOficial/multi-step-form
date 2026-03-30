@@ -7,6 +7,9 @@ export const Container = styled.div<CommonInputProps>`
 	${({ $type }) => {
 		if ($type === 'text' || $type === 'email') {
 			return css`
+				display: flex;
+				flex-direction: column;
+				gap: 3px;
 			`;
 		} else if ($type === 'radio') {
 			return css`
