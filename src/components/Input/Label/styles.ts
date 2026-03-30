@@ -9,7 +9,7 @@ export const LabelElement = styled.label<CommonInputProps>`
 		if ($type === 'text' || $type === 'email') {
 			return css`
 				color: ${props => props.theme.colors.primary.first};
-				font-size: 1rem;
+				font-size: 1.2rem;
 				font-weight: ${props => props.theme.font.weight.secundary};
 				text-transform: capitalize;
 			`;

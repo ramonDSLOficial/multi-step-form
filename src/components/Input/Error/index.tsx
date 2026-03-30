@@ -3,9 +3,7 @@ import { useInputContext } from '../InputContext';
 
 import { ErrorElement } from './styles';
 
-interface ErrorProps extends HTMLAttributes<HTMLParagraphElement> {}
-
-const Error: React.FC<ErrorProps> = ({ className }) => {
+const Error: React.FC<HTMLAttributes<HTMLParagraphElement>> = ({ className }) => {
 	const { $type, error, inputClassName } = useInputContext();
 
 	return (

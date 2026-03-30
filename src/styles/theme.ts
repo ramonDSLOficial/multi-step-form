@@ -27,7 +27,7 @@ export const theme: DefaultTheme = {
         weight: {
             primary: 700, 
             secundary: 500, 
-            terciary: 500
+            terciary: 400
         }
     }
 };

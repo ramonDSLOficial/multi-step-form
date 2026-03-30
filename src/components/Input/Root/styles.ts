@@ -9,7 +9,7 @@ export const Container = styled.div<CommonInputProps>`
 			return css`
 				display: flex;
 				flex-direction: column;
-				gap: 3px;
+				gap: 5px;
 			`;
 		} else if ($type === 'radio') {
 			return css`
