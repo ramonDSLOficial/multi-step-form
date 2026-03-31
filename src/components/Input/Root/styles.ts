@@ -13,6 +13,9 @@ export const Container = styled.div<CommonInputProps>`
 			`;
 		} else if ($type === 'radio') {
 			return css`
+				
+				border: 1px solid ${props => props.theme.colors.neutral.second};
+				border-radius: 5px;
 			`;
 		} else if ($type === 'checkbox') {
 			return css`

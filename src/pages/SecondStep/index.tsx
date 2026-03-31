@@ -18,10 +18,13 @@ const SecondStep: React.FC = () => {
 							source="/images/icon-arcade.svg"
 							alt="arcade plan icon"
 						/>
-						<Input.Label label="Arcade" />
-						<Input.Description>$9/mo</Input.Description>
-						<Input.Description>2 months free</Input.Description>
-						<Input.InputElement name="plan" />
+						
+						<div>
+							<Input.Label label="Arcade" />
+							<Input.Description>$9/mo</Input.Description>
+							<Input.Description>2 months free</Input.Description>
+							<Input.InputElement name="plan" />
+						</div>
 					</Input.Root>
 
 					<Input.Root $type="radio" inputClassName='plan'>
@@ -29,10 +32,13 @@ const SecondStep: React.FC = () => {
 							source="/images/icon-advanced.svg"
 							alt="advanced plan icon "
 						/>
-						<Input.Label label="Advanced" />
-						<Input.Description>$12/mo</Input.Description>
-						<Input.Description>2 months free</Input.Description>
-						<Input.InputElement name="plan" />
+
+						<div>
+							<Input.Label label="Advanced" />
+							<Input.Description>$12/mo</Input.Description>
+							<Input.Description>2 months free</Input.Description>
+							<Input.InputElement name="plan" />
+						</div>
 					</Input.Root>
 
 					<Input.Root $type="radio" inputClassName='plan'>
@@ -40,10 +46,13 @@ const SecondStep: React.FC = () => {
 							source="/images/icon-pro.svg"
 							alt="pro plan icon"
 						/>
-						<Input.Label label="Pro" />
-						<Input.Description>$15/mo</Input.Description>
-						<Input.Description>2 months free</Input.Description>
-						<Input.InputElement name="plan" />
+
+						<div>
+							<Input.Label label="Pro" />
+							<Input.Description>$15/mo</Input.Description>
+							<Input.Description>2 months free</Input.Description>
+							<Input.InputElement name="plan" />
+						</div>
 					</Input.Root>
 				</section>
 

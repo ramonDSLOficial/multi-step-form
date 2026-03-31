@@ -24,4 +24,8 @@ export const Input = styled.input<Omit<CommonInputProps, '$type'>>`
 			border-color: ${props => props.theme.colors.primary.fifth};
 		}
 	}
+
+	&[type='radio'] {
+		display: none;
+	}
 `;
