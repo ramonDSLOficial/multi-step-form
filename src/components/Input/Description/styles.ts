@@ -21,7 +21,8 @@ export const Container = styled.p<CommonInputProps>`
                         }
                     `;         
                 case 'checkbox':
-                    return css``;
+                    return css`
+                    `;
                 default:
                     break;
             }

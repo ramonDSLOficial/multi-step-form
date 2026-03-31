@@ -13,4 +13,10 @@ export const FormContanier = styled.section`
         flex-direction: column;
         gap: 10px;
     }
+
+    & > section:last-of-type {
+        text-align: center;
+        background-color: ${props => props.theme.colors.neutral.third};
+        border-radius: 5px;
+    }
 `;
