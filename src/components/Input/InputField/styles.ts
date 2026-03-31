@@ -29,7 +29,7 @@ export const Input = styled.input<Omit<CommonInputProps, '$type'>>`
 		display: none;
 	}
 
-	div.toggle > &[type='checkbox'] {
+	&[type='checkbox'].toggle {
 		position: relative;
 		appearance: none;
 		-webkit-appearance: none;
