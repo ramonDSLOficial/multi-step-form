@@ -5,7 +5,7 @@ export const Container = styled.section``;
 export const FormContanier = styled.section`
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
     margin-top: 15px;
     
     & > section:first-of-type {
@@ -15,8 +15,8 @@ export const FormContanier = styled.section`
     }
 
     & > section:last-of-type {
-        text-align: center;
-        background-color: ${props => props.theme.colors.neutral.third};
+        background-color: ${props => props.theme.colors.neutral.fourth};
+        padding: 10px;
         border-radius: 5px;
     }
 `;

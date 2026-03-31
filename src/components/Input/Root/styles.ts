@@ -34,6 +34,12 @@ export const Container = styled.div<CommonInputProps>`
 			`;
 		} else if ($type === 'checkbox') {
 			return css`
+				&.toggle {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					gap: 20px;
+				}
 			`;
 		}
 	}}

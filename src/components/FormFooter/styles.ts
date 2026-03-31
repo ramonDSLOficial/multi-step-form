@@ -9,4 +9,5 @@ export const Container = styled.section`
     height: 15%;
     background-color: ${props => props.theme.colors.neutral.white};
     box-shadow: 2px 1px 10px #00000015;
+    margin-top: 20px;
 `;

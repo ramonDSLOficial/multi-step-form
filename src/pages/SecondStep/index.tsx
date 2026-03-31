@@ -58,7 +58,7 @@ const SecondStep: React.FC = () => {
 
 				<section>
 					<Input.Root $type="checkbox" inputClassName="toggle">
-						<Input.Label label="monthly" />
+						<Input.Label label="monthly" className='selected'/>
 
 						<Input.InputElement />
 

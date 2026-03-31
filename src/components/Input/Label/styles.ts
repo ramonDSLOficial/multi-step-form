@@ -22,7 +22,18 @@ export const LabelElement = styled.label<CommonInputProps>`
 				text-transform: capitalize;
 			`;
 		} else if ($type === 'checkbox') {
-			return css``;
+			return css`
+				div.toggle & {
+					color: ${props => props.theme.colors.neutral.first};
+					font-size: 1.2rem;
+					font-weight: ${props => props.theme.font.weight.primary};
+					text-transform: capitalize;
+
+					&.selected {
+						color: ${props => props.theme.colors.primary.first};
+					}
+				}
+			`;
 		}
 	}}
 `;
