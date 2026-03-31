@@ -14,7 +14,13 @@ export const LabelElement = styled.label<CommonInputProps>`
 				text-transform: capitalize;
 			`;
 		} else if ($type === 'radio') {
-			return css``;
+			return css`
+				color: ${props => props.theme.colors.primary.first};
+				font-size: 1.2rem;
+				font-weight: ${props => props.theme.font.weight.primary};
+				letter-spacing: .2px;
+				text-transform: capitalize;
+			`;
 		} else if ($type === 'checkbox') {
 			return css``;
 		}
