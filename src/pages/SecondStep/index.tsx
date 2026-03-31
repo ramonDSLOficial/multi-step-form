@@ -13,12 +13,12 @@ const SecondStep: React.FC = () => {
 
 			<FormContanier>
 				<section>
-					<Input.Root $type="radio" inputClassName='plan'>
+					<Input.Root $type="radio" inputClassName='plan' className='selected'>
 						<Input.Icon
 							source="/images/icon-arcade.svg"
 							alt="arcade plan icon"
 						/>
-						
+
 						<div>
 							<Input.Label label="Arcade" />
 							<Input.Description>$9/mo</Input.Description>

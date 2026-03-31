@@ -6,6 +6,7 @@ export const FormContanier = styled.section`
     display: flex;
     flex-direction: column;
     gap: 15px;
+    margin-top: 15px;
     
     & > section:first-of-type {
         display: flex;

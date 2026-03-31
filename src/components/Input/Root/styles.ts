@@ -13,9 +13,17 @@ export const Container = styled.div<CommonInputProps>`
 			`;
 		} else if ($type === 'radio') {
 			return css`
-				
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				padding: 12px;
 				border: 1px solid ${props => props.theme.colors.neutral.second};
 				border-radius: 5px;
+
+				&.plan.selected {
+					border-color: ${props => props.theme.colors.primary.second};
+					background-color: ${props => props.theme.colors.neutral.fourth};
+				}
 			`;
 		} else if ($type === 'checkbox') {
 			return css`
