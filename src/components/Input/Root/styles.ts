@@ -43,7 +43,6 @@ export const Container = styled.div<CommonInputProps>`
 				
 				&.aditions {
 					display: flex;
-					justify-content: space-between;
 					align-items: center;
 					gap: 20px;
 					padding: 10px;

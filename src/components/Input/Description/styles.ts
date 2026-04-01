@@ -22,6 +22,10 @@ export const Container = styled.p<CommonInputProps>`
                     `;         
                 case 'checkbox':
                     return css`
+                        &.price {
+                            margin-left: auto;
+                            margin-right: 10px;
+                        }
                     `;
                 default:
                     break;
