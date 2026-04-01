@@ -49,6 +49,12 @@ export const Container = styled.div<CommonInputProps>`
 					border: 1.5px solid ${props => props.theme.colors.neutral.second};
 					border-radius: 5px;
 
+					& > div {
+						display: flex;
+						flex-direction: column;
+						gap: 2px;
+					}
+					
 					&.selected {
 						border-color: ${props => props.theme.colors.primary.second};
 						background-color: ${props => props.theme.colors.neutral.third};

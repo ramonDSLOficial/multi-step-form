@@ -23,8 +23,16 @@ export const Container = styled.p<CommonInputProps>`
                 case 'checkbox':
                     return css`
                         &.price {
+                            color: ${props => props.theme.colors.primary.second};
+                            font-size: 1.2rem;
+                            font-weight: ${props => props.theme.font.weight.secundary};
                             margin-left: auto;
-                            margin-right: 10px;
+                        }
+
+                        &.additionDesc {
+                            color: ${props => props.theme.colors.neutral.first};
+                            font-size: 1rem;
+                            font-weight: ${props => props.theme.font.weight.secundary};
                         }
                     `;
                 default:

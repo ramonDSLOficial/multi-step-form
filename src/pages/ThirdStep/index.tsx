@@ -12,12 +12,12 @@ const ThirdStep: React.FC = () => {
 			<Paragraph>Add-ons help enhance your gaming experience.</Paragraph>
 
 			<section>
-				<Input.Root $type="checkbox" inputClassName="aditions" className='selected'>
-					<Input.InputElement checked />
+				<Input.Root $type="checkbox" inputClassName="aditions">
+					<Input.InputElement />
 
 					<div>
 						<Input.Label label="Online service" />
-						<Input.Description className="addDesc">Access to multiplayer games</Input.Description>
+						<Input.Description className="additionDesc">Access to multiplayer games</Input.Description>
 					</div>
 
 					<Input.Description className="price">+$1/mo</Input.Description>
@@ -28,7 +28,7 @@ const ThirdStep: React.FC = () => {
 
 					<div>
 						<Input.Label label="Larger storage" />
-						<Input.Description className="addDesc">Extra 1TB of cloud save</Input.Description>
+						<Input.Description className="additionDesc">Extra 1TB of cloud save</Input.Description>
 					</div>
 
 					<Input.Description className="price">+$2/mo</Input.Description>
@@ -39,7 +39,7 @@ const ThirdStep: React.FC = () => {
 
 					<div>
 						<Input.Label label="Customizable Profile" />
-						<Input.Description className="addDesc">Custom theme on your profile</Input.Description>
+						<Input.Description className="additionDesc">Custom theme on your profile</Input.Description>
 					</div>
 
 					<Input.Description className="price">+$2/mo</Input.Description>
