@@ -7,14 +7,14 @@ interface InputProps
 	extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {}
 
 const InputField: React.FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
-	({ name, placeholder, className, id, ...props }, ref) => {
+	({ name, placeholder, className, ...props }, ref) => {
 		const { $type, inputId, inputClassName } = useInputContext();
 
 		return (
 			<Input
 				type={$type}
 				name={name}
-				id={`${inputId} ${id}`}
+				id={`${inputId}`}
 				placeholder={placeholder}
 				className={`${inputClassName} ${className}`}
 				ref={ref}

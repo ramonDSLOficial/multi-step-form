@@ -18,6 +18,7 @@ export const LabelElement = styled.label<CommonInputProps>`
 				color: ${props => props.theme.colors.primary.first};
 				font-size: 1.2rem;
 				font-weight: ${props => props.theme.font.weight.primary};
+				text-shadow: 1px 1px 1px #022a5a2c;
 				letter-spacing: .2px;
 				text-transform: capitalize;
 			`;
