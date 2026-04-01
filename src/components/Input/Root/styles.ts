@@ -40,6 +40,21 @@ export const Container = styled.div<CommonInputProps>`
 					align-items: center;
 					gap: 20px;
 				}
+				
+				&.aditions {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					gap: 20px;
+					padding: 10px;
+					border: 1px solid ${props => props.theme.colors.neutral.second};
+					border-radius: 5px;
+
+					&.selected {
+						border-color: ${props => props.theme.colors.primary.second};
+						background-color: ${props => props.theme.colors.neutral.third};
+					}
+				}
 			`;
 		}
 	}}
