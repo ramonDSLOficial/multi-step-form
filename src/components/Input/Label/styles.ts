@@ -24,7 +24,7 @@ export const LabelElement = styled.label<CommonInputProps>`
 			`;
 		} else if ($type === 'checkbox') {
 			return css`
-				div.toggle & {
+				.toggle & {
 					color: ${props => props.theme.colors.neutral.first};
 					font-size: 1.2rem;
 					font-weight: ${props => props.theme.font.weight.primary};
@@ -33,6 +33,11 @@ export const LabelElement = styled.label<CommonInputProps>`
 					&.selected {
 						color: ${props => props.theme.colors.primary.first};
 					}
+				}
+				.aditions & {
+					color: ${props => props.theme.colors.neutral.black};
+					font-size: 1.2rem;
+					font-weight: ${props => props.theme.font.weight.primary};
 				}
 			`;
 		}

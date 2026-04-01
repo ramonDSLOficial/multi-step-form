@@ -16,7 +16,7 @@ const ThirdStep: React.FC = () => {
 					<Input.InputElement checked />
 
 					<div>
-						<Input.Label label="Online servicey" />
+						<Input.Label label="Online service" />
 						<Input.Description className="addDesc">Access to multiplayer games</Input.Description>
 					</div>
 

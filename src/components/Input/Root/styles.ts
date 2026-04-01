@@ -47,7 +47,7 @@ export const Container = styled.div<CommonInputProps>`
 					align-items: center;
 					gap: 20px;
 					padding: 10px;
-					border: 1px solid ${props => props.theme.colors.neutral.second};
+					border: 1.5px solid ${props => props.theme.colors.neutral.second};
 					border-radius: 5px;
 
 					&.selected {
