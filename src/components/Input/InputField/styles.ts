@@ -58,7 +58,49 @@ export const Input = styled.input<Omit<CommonInputProps, '$type'>>`
 		}
 
 		&.aditions {
-			
+			position: relative;
+			appearance: none;
+			-webkit-appearance: none;
+			width: 18px;
+			height: 18px;
+			border: 1px solid ${(props) => props.theme.colors.neutral.second};
+			border-radius: 3px;
+			transition: all 0.3s ease-in-out;
+
+			&:checked {
+				border-color: ${(props) => props.theme.colors.primary.second};
+				background-color: ${(props) => props.theme.colors.primary.second};
+			}
+			&::after,
+			&::before {
+				position: absolute;
+				display: block;
+				content: '';
+				height: 2px;
+				background-color: ${(props) => props.theme.colors.neutral.white};
+				transform: rotate(90deg);
+				transition: all 0.3s ease-in-out;
+			}
+			&::after {
+				width: 9px;
+				top: 40%;
+				right: 25%;
+			}
+			&::before {
+				bottom: 30%;
+				left: 35%;
+				width: 5px;
+			}
+			&:checked::after {
+				transform: rotate(125deg);
+				right: 3px;
+				bottom: 6px;
+			}
+			&:checked::before {
+				transform: rotate(45deg);
+				bottom: 5.5px;
+				left: 3px;
+			}
 		}
 	}
 `;

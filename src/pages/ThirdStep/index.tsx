@@ -13,7 +13,7 @@ const ThirdStep: React.FC = () => {
 
 			<section>
 				<Input.Root $type="checkbox" inputClassName="aditions" className='selected'>
-					<Input.InputElement />
+					<Input.InputElement checked />
 
 					<div>
 						<Input.Label label="Online servicey" />
