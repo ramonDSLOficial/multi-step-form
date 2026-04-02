@@ -6,10 +6,10 @@ interface LabelProps extends LabelHTMLAttributes<HTMLLabelElement>{
 	label: string;
 }
 
-const Label: React.FunctionComponent<LabelProps> = ({ label, className, ...props }) => {
+const Label: React.FunctionComponent<LabelProps> = ({ label, className, htmlFor, ...props }) => {
 	const { inputId, $type, inputClassName } = useInputContext();
 	return (
-		<LabelElement $type={$type} htmlFor={inputId} className={`${inputClassName} ${className}`} {...props}>
+		<LabelElement $type={$type} htmlFor={htmlFor ? htmlFor : inputId} className={`${inputClassName} ${className}`} {...props}>
 			{label}
 		</LabelElement>
 	);
