@@ -20,37 +20,35 @@ const FourthStep: React.FC = () => {
 				Double-check everything looks OK before confirming.
 			</Paragraph>
 
-			<section>
-				<PlanDetails>
-					<section>
-						<Clause>
-							<div>
-								<Term>Arcade (monthly)</Term>
-								<ChangePlanbtn to={PATHS.steps.second}>
-									change
-								</ChangePlanbtn>
-							</div>
+			<PlanDetails>
+				<section>
+					<Clause>
+						<div>
+							<Term>Arcade (monthly)</Term>
+							<ChangePlanbtn to={PATHS.steps.second}>
+								change
+							</ChangePlanbtn>
+						</div>
 
-							<Price className="plan">$9/mo</Price>
-						</Clause>
-
-						<Clause>
-							<Term>online service</Term>
-							<Price>+$1/mo</Price>
-						</Clause>
-
-						<Clause>
-							<Term>larger storage</Term>
-							<Price>+$2/mo</Price>
-						</Clause>
-					</section>
+						<Price className="plan">$9/mo</Price>
+					</Clause>
 
 					<Clause>
-						<Term>Total (per month)</Term>
-						<Price className="total">+$12/mo</Price>
+						<Term>online service</Term>
+						<Price>+$1/mo</Price>
 					</Clause>
-				</PlanDetails>
-			</section>
+
+					<Clause>
+						<Term>larger storage</Term>
+						<Price>+$2/mo</Price>
+					</Clause>
+				</section>
+
+				<Clause>
+					<Term>Total (per month)</Term>
+					<Price className="total">+$12/mo</Price>
+				</Clause>
+			</PlanDetails>
 		</Container>
 	);
 };
