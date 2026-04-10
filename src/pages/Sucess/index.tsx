@@ -6,7 +6,7 @@ import Paragraph from '../../components/Paragraph';
 
 const Sucess: React.FC = () => {
 	return (
-		<Container>
+		<Container className='sucessPage'>
 			<img src="/images/icon-thank-you.svg" alt='thank you icon'/>
 
 			<Title>Thank you!</Title>
