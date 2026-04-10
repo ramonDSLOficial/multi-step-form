@@ -6,9 +6,9 @@ import Button from '../Button';
 
 const FormFooter: React.FC<HTMLAttributes<HTMLHtmlElement>> = () => {
     const {currentStep, changeStep, lastFormStepIndex} = useChangeFormStep()
-
+    
     return (
-        <Container>
+        currentStep <= lastFormStepIndex && <Container>
             {
                 (currentStep > 0 && currentStep <= lastFormStepIndex) &&
                     <Button 
@@ -29,7 +29,7 @@ const FormFooter: React.FC<HTMLAttributes<HTMLHtmlElement>> = () => {
                         // mudar esse button submit depois
                         // type='submit'
                         label='confirm'
-                        variant='send'
+                        variant='next'
                         changeStep={changeStep}
                     /> :
                     null

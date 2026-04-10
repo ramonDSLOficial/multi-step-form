@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.section`
     display: flex;
+    /* por aqui para sumir com o display quando chegar na ultima pagina */
     justify-content: flex-end;
     align-items: center;
     padding: 12px 10px;

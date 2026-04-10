@@ -9,10 +9,9 @@ export const Container = styled.form`
 	height: inherit;
 	background-color: ${(props) => props.theme.colors.neutral.third};
 
-	& > section:first-of-type {
+	& > section:first-child {
 		width: 90%;
 		padding: 25px 20px;
-		padding: ${props => props.className?.includes('sucessPage') ? '25px 20px' : '80px 20px' };
 		border-radius: 5px;
 		box-shadow: -1px 1px 10px #00000024;
 		margin-top: -32px;
