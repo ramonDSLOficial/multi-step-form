@@ -14,7 +14,11 @@ export const Container = styled.form`
 		padding: 25px 20px;
 		border-radius: 5px;
 		box-shadow: -1px 1px 10px #00000024;
-		margin-top: -40px;
+		margin-top: -12%;
 		background-color: ${(props) => props.theme.colors.neutral.white};
+
+		@media screen and (min-width: 350px) and (max-width: 389px) {
+			margin-top: -8%;
+		}
 	}
 `;

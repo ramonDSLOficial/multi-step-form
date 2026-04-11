@@ -19,7 +19,7 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 62.5%;
         font-family: "Ubuntu";
         width: 100%;
-        height: 100vh;
+        min-height: 100vh;
     }
 
     
