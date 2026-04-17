@@ -20,12 +20,17 @@ export const Container = styled.section`
 		aspect-ratio: 36 / 12;
 	}
 
+	@media screen and (min-width: 524px) {
+		gap: 35px;
+	}
+	
 	@media screen and (min-width: 438px) and (max-width: 584px) {
-		aspect-ratio: 48 / 12;
+		aspect-ratio: 68 / 19;
+		height: 30vh;
 	}
 	@media screen and (min-width: 584px) and (max-width: 769px) {
-		aspect-ratio: 72 / 15;
-		height: 30vh;
+		aspect-ratio: 68 / 19;
+		height: 32vh;
 	}
 	/* 516 */
 	// tablet 481 - 769

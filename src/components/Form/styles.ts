@@ -17,8 +17,14 @@ export const Container = styled.form`
 		margin-top: -12%;
 		background-color: ${(props) => props.theme.colors.neutral.white};
 
-		@media screen and (min-width: 350px) and (max-width: 389px) {
+		@media screen and (min-width: 350px) {
 			margin-top: -8%;
+		}
+		@media screen and (min-width: 438px) and (max-width: 584px) {
+			margin-top: -5%;
+		}
+		@media screen and (min-width: 584px) and (max-width: 769px) {
+			max-width: 550px;
 		}
 	}
 `;
