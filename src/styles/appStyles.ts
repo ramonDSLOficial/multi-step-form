@@ -6,6 +6,7 @@ export const Container = styled.section`
     justify-content: space-between;
     width: 100%;
     height: 100vh;
+    
     @media screen and (min-width: 769px) {
         align-items: center;
     }

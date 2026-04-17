@@ -12,8 +12,3 @@ const Footer: React.FC = () => {
 }
 
 export default Footer;
-/*
- <div class="attribution">
-  </div>
-
-  */
