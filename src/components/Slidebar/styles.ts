@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.section`
 	display: flex;
 	justify-content: center;
-	padding-top: 25px;
+	padding-top: 35px;
 	gap: 15px;
 	height: 23vh;
 	background: ${(props) => props.theme.colors.neutral.first}
