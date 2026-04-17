@@ -8,9 +8,6 @@ import Form from './components/Form';
 import FormFooter from './components/FormFooter';
 
 const App: React.FC = () => {
-	/* 
-	MAIN E FOOTER COM 100% NO MOBAL E O FORM LIMITADO, NO DESK LIMITA O MAIN E O FORM ACOMPANHA
-	 */
 	return (
 		<Container>
 			<Main>
@@ -29,10 +26,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-
-/*
-5 etapas / 5 pages
-
-campo para os bot~es
-slidebar
-*/
