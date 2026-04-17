@@ -17,7 +17,7 @@ export const Main = styled.main`
     align-items: center;
     width: inherit;
     height: 90%;
-
+    
     @media screen and (min-width: 769px) {
         flex-direction: row;
         gap: 25px;
