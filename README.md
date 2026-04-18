@@ -7,4 +7,4 @@ futuras fontes:
 4rem
 */ 
 
-ver o a questão da imagem do SlideBar
+ver o a questão da imagem do SideBar

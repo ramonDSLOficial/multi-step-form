@@ -4,8 +4,25 @@ export const Container = styled.div`
 	& > div {
 		display: none;
 
-		p {
+		@media screen and (min-width: 769px) {
+			display: flex;
+			flex-direction: column;
+			gap: 2px;
+
+			& > p {
+				color: ${(props) => props.theme.colors.neutral.first};
+				font-size: 0.9rem;
+				font-weight: ${(props) => props.theme.font.weight.secundary};
+				text-transform: uppercase;
+				letter-spacing: .2px;
+			}
 		}
+	}
+
+	@media screen and (min-width: 769px) {
+		display: flex;
+		align-items: center;
+		gap: 14px;
 	}
 `;
 
@@ -25,4 +42,10 @@ export const Stage = styled.p`
 	}
 `;
 
-export const Name = styled.h3``;
+export const Name = styled.h3`
+	color: ${(props) => props.theme.colors.neutral.white};
+	font-size: 1.1rem;
+	font-weight: ${(props) => props.theme.font.weight.primary};
+	text-transform: uppercase;
+	letter-spacing: 1px;
+`;
