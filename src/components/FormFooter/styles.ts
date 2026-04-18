@@ -14,5 +14,6 @@ export const Container = styled.section`
 	@media screen and (min-width: 768px) {
 		margin-top: unset;
 		height: auto;
+		box-shadow: unset;
 	}
 `;

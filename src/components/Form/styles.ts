@@ -26,11 +26,11 @@ export const Container = styled.form`
 
 		@media screen and (min-width: 768px) {
 			margin-top: unset;
-			margin-bottom: 25%;
 			padding: 0;
 			width: 100%;
 			height: unset;
 			max-width: unset;
+			box-shadow: unset;
 			border-radius: 0;
 		}
 	}
