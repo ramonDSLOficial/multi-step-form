@@ -9,6 +9,12 @@ export const Container = styled.form`
 	height: inherit;
 	background-color: ${(props) => props.theme.colors.neutral.third};
 
+	@media screen and (min-width: 768px) {
+		width: 75%;
+		background-color: transparent;
+		justify-content: flex-end;
+	}
+
 	& > section:first-child {
 		width: 90%;
 		padding: 25px 20px;
@@ -17,5 +23,15 @@ export const Container = styled.form`
 		margin-top: -16.5%;
 		background-color: ${(props) => props.theme.colors.neutral.white};
 		max-width: 600px;
+
+		@media screen and (min-width: 768px) {
+			margin-top: unset;
+			margin-bottom: 25%;
+			padding: 0;
+			width: 100%;
+			height: unset;
+			max-width: unset;
+			border-radius: 0;
+		}
 	}
 `;

@@ -15,7 +15,7 @@ export const Container = styled.footer`
         }
     }
 
-    @media screen and (min-width: 486px) {
+    @media screen and (min-width: 486px) and (max-width: 671px) {
         margin-top: 12%;
     }
     @media screen and (min-width: 672px) and (max-width: 768px) {

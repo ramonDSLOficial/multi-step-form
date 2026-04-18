@@ -13,7 +13,8 @@ export const Container = styled.section`
 
 	@media screen and (min-width: 769px) {
 		background-image: url('/images/bg-sidebar-desktop.svg');
-		height: auto;
-		aspect-ratio: 8 / 24;
+		aspect-ratio: 9.75 / 19.95;
+		width: 45%;
+		border-radius: 10px;
 	}
 `;
