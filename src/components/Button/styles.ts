@@ -6,11 +6,15 @@ export const Container = styled.button`
     text-transform: capitalize;
     letter-spacing: .2px;
 
+    @media screen and (min-width: 768px) {
+        font-size: 1.2rem;
+    }
+
     &[data-variant='prev'] {
         color: ${props => props.theme.colors.neutral.first};
         background-color: transparent;
         border: none;
-        margin-right: auto;
+        margin-right: auto;       
     }
     &[data-variant='next'] {
         color: ${props => props.theme.colors.neutral.second};
@@ -18,6 +22,11 @@ export const Container = styled.button`
         border-radius: 5px;
         border: 1px solid ${props => props.theme.colors.neutral.first};
         background-color: ${props => props.theme.colors.primary.first};
+
+        @media screen and (min-width: 768px) {
+            padding: 10.5px 18px;
+            border-radius: 7px;
+        }
     }
     &[data-variant='send'] {
         color: ${props => props.theme.colors.neutral.fourth};
@@ -25,5 +34,12 @@ export const Container = styled.button`
         border-radius: 5px;
         border: 1px solid ${props => props.theme.colors.primary.fourth};
         background-color: ${props => props.theme.colors.primary.second};
+        
+        @media screen and (min-width: 768px) {
+            padding: 10px 22px;
+            border-radius: 7px;
+            border: none;
+            box-shadow: inset 1px 1px 5px #0707074a;
+        }
     }
 `;

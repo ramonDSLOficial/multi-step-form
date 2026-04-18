@@ -6,6 +6,7 @@ export const IconField = styled.div<CommonInputProps>`
     & > img {
         min-width: 32px;
         width: 80%;
+        image-rendering: pixelated;
     }
 `;
 

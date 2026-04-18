@@ -26,10 +26,8 @@ const FormFooter: React.FC<HTMLAttributes<HTMLHtmlElement>> = () => {
                     /> : 
                 currentStep === lastFormStepIndex ?
                     <Button 
-                        // mudar esse button submit depois
-                        // type='submit'
                         label='confirm'
-                        variant='next'
+                        variant='send'
                         changeStep={changeStep}
                     /> :
                     null
