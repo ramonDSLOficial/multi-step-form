@@ -8,6 +8,7 @@ export const Container = styled.section`
 	height: 100vh;
 
 	@media screen and (min-width: 769px) {
+		padding: 10px;
 		align-items: center;
 		background-color: ${(props) => props.theme.colors.neutral.third};
 	}
@@ -24,11 +25,11 @@ export const Main = styled.main`
 		flex-direction: row;
 		gap: 50px;
 		max-width: 750px;
-		margin-top: 20px;
-		padding: 20px;
+		padding: 10px;
+		padding-right: 8%;
 		justify-content: center;
 		border-radius: 12px;
 	    background-color: ${(props) => props.theme.colors.neutral.white};
-		box-shadow: -1px 1px 10px #00000018;
+		box-shadow: -1px 1px 10px #00000039;
 	}
 `;

@@ -11,6 +11,7 @@ export const Container = styled.form`
 
 	@media screen and (min-width: 768px) {
 		width: 75%;
+		max-width: 380px;
 		background-color: transparent;
 		justify-content: flex-end;
 	}

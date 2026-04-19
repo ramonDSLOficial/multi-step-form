@@ -12,9 +12,9 @@ export const Container = styled.section`
 	margin-top: 20px;
 
 	@media screen and (min-width: 768px) {
-		margin-top: 22%;
+		margin-top: 17.5%;
 		height: auto;
 		box-shadow: unset;
-		padding: 0 10px;
+		padding: 0;
 	}
 `;
