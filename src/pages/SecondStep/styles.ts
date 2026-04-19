@@ -12,6 +12,10 @@ export const FormContanier = styled.section`
         display: flex;
         flex-direction: column;
         gap: 10px;
+
+        @media screen and (min-width: 769px) {
+            flex-direction: row;
+        }
     }
 
     & > section:last-of-type {
