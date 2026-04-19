@@ -8,6 +8,14 @@ export const Container = styled.div<CommonInputProps>`
 				display: grid;
 				grid-template-columns: minmax(100px, 1fr);
 				gap: 5px;
+
+				@media screen and (min-width: 769px) {
+					grid-template-columns: repeat(2, minmax(100px, 1fr));
+					grid-template-rows: repeat(2, minmax(auto-fit, 1fr));
+					grid-template-areas: 
+					"label error"
+					"input input";
+				}
 			`;
 		} else if ($type === 'radio') {
 			return css`

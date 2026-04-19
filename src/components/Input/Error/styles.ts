@@ -9,4 +9,9 @@ export const ErrorElement = styled.p<StyledErrorElementProps>`
 	font-weight: ${(props) => props.theme.font.weight.primary};
 	text-transform: capitalize;
 	letter-spacing: 0.6px;
+
+	@media screen and (min-width: 769px) {
+		grid-area: error;
+		justify-self: flex-end;
+	}
 `;

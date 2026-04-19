@@ -23,6 +23,10 @@ export const Input = styled.input<Omit<CommonInputProps, '$type'>>`
 		&:invalid {
 			border-color: ${(props) => props.theme.colors.primary.fifth};
 		}
+
+		@media screen and (min-width: 769px) {
+			grid-area: input;
+		}
 	}
 
 	&[type='radio'] {

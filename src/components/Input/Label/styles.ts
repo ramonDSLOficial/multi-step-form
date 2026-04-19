@@ -1,10 +1,7 @@
 import styled, { css } from 'styled-components';
 import type { CommonInputProps } from '../transientsProps';
 
-// interface StyledLabelElementProps extends CommonInputProps {}
-// ${props => props.theme.};
 export const LabelElement = styled.label<CommonInputProps>`
-	/* mudar o email precisa disso tbm */
 	${({ $type }) => {
 		if ($type === 'text' || $type === 'email') {
 			return css`
@@ -12,6 +9,10 @@ export const LabelElement = styled.label<CommonInputProps>`
 				font-size: 1.2rem;
 				font-weight: ${props => props.theme.font.weight.secundary};
 				text-transform: capitalize;
+
+				@media screen and (min-width: 769px) {
+					grid-area: label;
+				}
 			`;
 		} else if ($type === 'radio') {
 			return css`
