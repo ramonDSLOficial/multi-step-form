@@ -26,6 +26,12 @@ export const Input = styled.input<Omit<CommonInputProps, '$type'>>`
 
 		@media screen and (min-width: 769px) {
 			grid-area: input;
+			transition: border-color .5s ease-in-out;
+			
+			&:hover {
+				cursor: pointer;
+				border-color: ${(props) => props.theme.colors.primary.second};
+			}
 		}
 	}
 
