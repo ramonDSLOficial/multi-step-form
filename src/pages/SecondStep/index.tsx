@@ -22,7 +22,7 @@ const SecondStep: React.FC = () => {
 						<div>
 							<Input.Label label="arcade" />
 							<Input.Description>$9/mo</Input.Description>
-							<Input.Description>2 months free</Input.Description>
+							<Input.Description className='advantage'>2 months free</Input.Description>
 							<Input.InputElement name="plan" />
 						</div>
 					</Input.Root>
@@ -36,7 +36,7 @@ const SecondStep: React.FC = () => {
 						<div>
 							<Input.Label label="advanced" />
 							<Input.Description>$12/mo</Input.Description>
-							<Input.Description>2 months free</Input.Description>
+							<Input.Description className='advantage'>2 months free</Input.Description>
 							<Input.InputElement name="plan" />
 						</div>
 					</Input.Root>
@@ -50,7 +50,7 @@ const SecondStep: React.FC = () => {
 						<div>
 							<Input.Label label="pro" />
 							<Input.Description>$15/mo</Input.Description>
-							<Input.Description>2 months free</Input.Description>
+							<Input.Description className='advantage'>2 months free</Input.Description>
 							<Input.InputElement name="plan" />
 						</div>
 					</Input.Root>

@@ -15,6 +15,8 @@ export const FormContanier = styled.section`
 
         @media screen and (min-width: 769px) {
             flex-direction: row;
+            justify-content: space-between;
+            gap: unset;
         }
     }
 

@@ -12,12 +12,18 @@ export const Container = styled.p<CommonInputProps>`
                             font-weight: ${props => props.theme.font.weight.secundary};
                         }
 
-                        .plan &:last-of-type {
-                            color: ${props => props.theme.colors.primary.first};
+                        .plan &.advantage {
+                            color: ${props => props.theme.colors.neutral.first};
                             font-size: 1rem;
                             font-weight: ${props => props.theme.font.weight.terciary};
-                            text-shadow: 1px 1px 1px #022a5a4d;
                             margin-top: 2px;
+                            
+                            @media screen and (min-width: 769px) {
+                                color: ${props => props.theme.colors.primary.first};
+                                font-size: 1rem;
+                                text-shadow: -1px 1px 1px #022a5a64;
+                                margin-top: unset;
+                            }
                         }
                     `;         
                 case 'checkbox':
