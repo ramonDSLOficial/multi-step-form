@@ -15,7 +15,7 @@ import { PATHS } from '../../routes/paths';
 const FourthStep: React.FC = () => {
 	return (
 		<Container>
-			<Title>finishing up</Title>
+			<Title>Finishing up</Title>
 			<Paragraph>
 				Double-check everything looks OK before confirming.
 			</Paragraph>
