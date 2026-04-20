@@ -13,7 +13,7 @@ const SecondStep: React.FC = () => {
 
 			<FormContanier>
 				<section>
-					<Input.Root $type="radio" inputClassName='plan' className='selected'>
+					<Input.Root $type="radio" inputClassName='plan'>
 						<Input.Icon
 							source="/images/icon-arcade.svg"
 							alt="arcade plan icon"
@@ -58,11 +58,11 @@ const SecondStep: React.FC = () => {
 
 				<section>
 					<Input.Root $type="checkbox" inputClassName="toggle">
-						<Input.Label label="monthly" className='selected'/>
+						<Input.Label label="monthly" />
 
 						<Input.InputElement />
 
-						<Input.Label label="yearly" />
+						<Input.Label label="yearly" className='selected'/>
 					</Input.Root>
 				</section>
 			</FormContanier>
@@ -71,27 +71,4 @@ const SecondStep: React.FC = () => {
 };
 
 export default SecondStep;
-/*
-<!-- Step 2 start -->
 
-  Select your plan
-  You have the option of monthly or yearly billing.
-
-  Arcade
-  $9/mo
-
-  Advanced
-  $12/mo
-
-  Pro
-  $15/mo
-
-  Monthly
-  Yearly
-
-  Go Back
-  Next Step
-
-  <!-- Step 2 end -->
-
-*/

@@ -14,19 +14,19 @@ const FirstStep: React.FC = () => {
 			</Paragraph>
 
 			<section>
-				<Input.Root $type="text" error="exerrado">
+				<Input.Root $type="text">
 					<Input.Label label="name" />
 					<Input.InputElement placeholder="e.g. Stephen King" />
 					<Input.Error />
 				</Input.Root>
 
-				<Input.Root $type="text" error="errado">
+				<Input.Root $type="text">
 					<Input.Label label="Email Address" />
 					<Input.InputElement placeholder="e.g. stephenking@lorem.com" />
 					<Input.Error />
 				</Input.Root>
 
-				<Input.Root $type="text" error="errado">
+				<Input.Root $type="text">
 					<Input.Label label="Phone Number" />
 					<Input.InputElement placeholder="e.g. +1 234 567 890" />
 					<Input.Error />
@@ -37,23 +37,3 @@ const FirstStep: React.FC = () => {
 };
 
 export default FirstStep;
-
-/*
-<!-- Step 1 start -->
-
-  Personal info
-  Please provide your name, email address, and phone number.
-
-  Name
-  e.g. Stephen King
-
-  Email Address
-  e.g. stephenking@lorem.com
-
-  Phone Number
-  e.g. +1 234 567 890
-
-  Next Step
-
-<!-- Step 1 end -->
-*/

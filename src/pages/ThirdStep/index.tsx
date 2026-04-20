@@ -12,7 +12,7 @@ const ThirdStep: React.FC = () => {
 			<Paragraph>Add-ons help enhance your gaming experience.</Paragraph>
 
 			<section>
-				<Input.Root $type="checkbox" inputClassName="aditions" className='selected'>
+				<Input.Root $type="checkbox" inputClassName="aditions">
 					<Input.InputElement />
 
 					<div>
@@ -50,28 +50,3 @@ const ThirdStep: React.FC = () => {
 };
 
 export default ThirdStep;
-
-/*
-<!-- Step 3 start -->
-
-  Pick add-ons
-  Add-ons help enhance your gaming experience.
-
-  Online servicey
-  Access to multiplayer games
-  +$1/mo
-
-  Larger storage
-  Extra 1TB of cloud save
-  +$2/mo
-
-  Customizable Profile
-  Custom theme on your profile
-  +$2/mo
-
-  Go Back
-  Next Step
-
-  <!-- Step 3 end -->
-
-*/
