@@ -19,7 +19,7 @@ export const Container = styled.section`
 		gap: 30px;
 		background-image: url('/images/bg-sidebar-desktop.svg');
 		aspect-ratio: 9.75 / 19.95;
-		width: 45%;
+		width: 65%;
 		border-radius: 10px;
 	}
 `;

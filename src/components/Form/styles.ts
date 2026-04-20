@@ -10,8 +10,8 @@ export const Container = styled.form`
 	background-color: ${(props) => props.theme.colors.neutral.third};
 
 	@media screen and (min-width: 768px) {
-		width: 75%;
-		max-width: 380px;
+		width: 100%;
+		max-width: 400px;
 		background-color: transparent;
 	}
 
@@ -25,7 +25,7 @@ export const Container = styled.form`
 		max-width: 600px;
 
 		@media screen and (min-width: 768px) {
-			margin-top: 8%;
+			margin-top: 5%;
 			padding: 0;
 			width: 100%;
 			height: unset;
