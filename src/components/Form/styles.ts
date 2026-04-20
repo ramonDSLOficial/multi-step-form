@@ -13,7 +13,6 @@ export const Container = styled.form`
 		width: 75%;
 		max-width: 380px;
 		background-color: transparent;
-		justify-content: flex-end;
 	}
 
 	& > section:first-child {
@@ -26,7 +25,7 @@ export const Container = styled.form`
 		max-width: 600px;
 
 		@media screen and (min-width: 768px) {
-			margin-top: unset;
+			margin-top: 8%;
 			padding: 0;
 			width: 100%;
 			height: unset;
