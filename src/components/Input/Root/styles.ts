@@ -42,7 +42,7 @@ export const Container = styled.div<CommonInputProps>`
 					gap: 30px;
 					width: 30%;
 					align-items: flex-start;
-					transition: border-color .5s ease-in-out;
+					transition: border-color 0.5s ease-in-out;
 
 					&:hover {
 						cursor: pointer;
@@ -91,6 +91,16 @@ export const Container = styled.div<CommonInputProps>`
 
 					@media screen and (min-width: 769px) {
 						padding: 15px;
+						transition: border-color .5s ease-in-out;
+
+						&:hover {
+							cursor: pointer;
+						}
+
+						&:not(.selected):hover {
+							border-color: ${(props) =>
+								props.theme.colors.primary.second};
+						}
 					}
 				}
 			`;

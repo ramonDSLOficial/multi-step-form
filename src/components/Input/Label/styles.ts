@@ -5,9 +5,9 @@ export const LabelElement = styled.label<CommonInputProps>`
 	${({ $type }) => {
 		if ($type === 'text' || $type === 'email') {
 			return css`
-				color: ${props => props.theme.colors.primary.first};
+				color: ${(props) => props.theme.colors.primary.first};
 				font-size: 1.2rem;
-				font-weight: ${props => props.theme.font.weight.secundary};
+				font-weight: ${(props) => props.theme.font.weight.secundary};
 				text-transform: capitalize;
 
 				@media screen and (min-width: 769px) {
@@ -16,11 +16,11 @@ export const LabelElement = styled.label<CommonInputProps>`
 			`;
 		} else if ($type === 'radio') {
 			return css`
-				color: ${props => props.theme.colors.primary.first};
+				color: ${(props) => props.theme.colors.primary.first};
 				font-size: 1.2rem;
-				font-weight: ${props => props.theme.font.weight.primary};
+				font-weight: ${(props) => props.theme.font.weight.primary};
 				text-shadow: 1px 1px 1px #022a5a2c;
-				letter-spacing: .2px;
+				letter-spacing: 0.2px;
 				text-transform: capitalize;
 
 				@media screen and (min-width: 769px) {
@@ -32,22 +32,28 @@ export const LabelElement = styled.label<CommonInputProps>`
 		} else if ($type === 'checkbox') {
 			return css`
 				.toggle & {
-					color: ${props => props.theme.colors.neutral.first};
+					color: ${(props) => props.theme.colors.neutral.first};
 					font-size: 1.2rem;
-					font-weight: ${props => props.theme.font.weight.primary};
+					font-weight: ${(props) => props.theme.font.weight.primary};
 					text-transform: capitalize;
 
 					&.selected {
-						color: ${props => props.theme.colors.primary.first};
+						color: ${(props) => props.theme.colors.primary.first};
 					}
 				}
 				.aditions & {
-					color: ${props => props.theme.colors.primary.first};
+					color: ${(props) => props.theme.colors.primary.first};
 					font-size: 1.2rem;
-					font-weight: ${props => props.theme.font.weight.primary};
-					
-					@media screen and (min-width: 769px) {
+					font-weight: ${(props) => props.theme.font.weight.primary};
+				}
+
+				@media screen and (min-width: 769px) {
+					.aditions & {
 						font-size: 1.3rem;
+					}
+
+					.aditions:hover & {
+						cursor: pointer;
 					}
 				}
 			`;

@@ -26,8 +26,8 @@ export const Input = styled.input<Omit<CommonInputProps, '$type'>>`
 
 		@media screen and (min-width: 769px) {
 			grid-area: input;
-			transition: border-color .5s ease-in-out;
-			
+			transition: border-color 0.5s ease-in-out;
+
 			&:hover {
 				cursor: pointer;
 				border-color: ${(props) => props.theme.colors.primary.second};
@@ -110,6 +110,12 @@ export const Input = styled.input<Omit<CommonInputProps, '$type'>>`
 				transform: rotate(45deg);
 				bottom: 5.5px;
 				left: 3px;
+			}
+
+			@media screen and (min-width: 769px) {
+				.aditions:hover & {
+					cursor: pointer;
+				}
 			}
 		}
 	}
