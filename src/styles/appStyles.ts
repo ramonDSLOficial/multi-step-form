@@ -8,7 +8,7 @@ export const Container = styled.section`
 	height: 100vh;
 
 	@media screen and (min-width: 769px) {
-		padding: 10px;
+		padding: 12px;
 		align-items: center;
 		background-color: ${(props) => props.theme.colors.neutral.third};
 	}
@@ -26,7 +26,7 @@ export const Main = styled.main`
 		gap: 50px;
 		max-width: 750px;
 		padding: 10px;
-		padding-right: 8%;
+		padding-right: 7%;
 		justify-content: center;
 		border-radius: 12px;
 	    background-color: ${(props) => props.theme.colors.neutral.white};
