@@ -12,7 +12,7 @@ const ThirdStep: React.FC = () => {
 			<Paragraph>Add-ons help enhance your gaming experience.</Paragraph>
 
 			<section>
-				<Input.Root $type="checkbox" inputClassName="aditions">
+				<Input.Root $type="checkbox" inputClassName="aditions" className='selected'>
 					<Input.InputElement />
 
 					<div>

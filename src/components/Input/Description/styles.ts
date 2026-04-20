@@ -39,6 +39,10 @@ export const Container = styled.p<CommonInputProps>`
                             color: ${props => props.theme.colors.neutral.first};
                             font-size: 1rem;
                             font-weight: ${props => props.theme.font.weight.secundary};
+                            
+                            @media screen and (min-width: 769px) {
+                                font-size: 1.2rem;
+                            }
                         }
                     `;
                 default:

@@ -88,6 +88,10 @@ export const Container = styled.div<CommonInputProps>`
 						background-color: ${(props) =>
 							props.theme.colors.neutral.third};
 					}
+
+					@media screen and (min-width: 769px) {
+						padding: 15px;
+					}
 				}
 			`;
 		}

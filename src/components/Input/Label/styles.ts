@@ -42,9 +42,13 @@ export const LabelElement = styled.label<CommonInputProps>`
 					}
 				}
 				.aditions & {
-					color: ${props => props.theme.colors.neutral.black};
+					color: ${props => props.theme.colors.primary.first};
 					font-size: 1.2rem;
 					font-weight: ${props => props.theme.font.weight.primary};
+					
+					@media screen and (min-width: 769px) {
+						font-size: 1.3rem;
+					}
 				}
 			`;
 		}
