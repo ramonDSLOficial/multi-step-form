@@ -42,6 +42,16 @@ export const Container = styled.div<CommonInputProps>`
 					gap: 30px;
 					width: 30%;
 					align-items: flex-start;
+					transition: border-color .5s ease-in-out;
+
+					&:hover {
+						cursor: pointer;
+					}
+
+					&:not(.selected):hover {
+						border-color: ${(props) =>
+							props.theme.colors.primary.second};
+					}
 
 					& > div:last-child {
 						gap: 2px;

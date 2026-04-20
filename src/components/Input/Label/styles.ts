@@ -22,6 +22,12 @@ export const LabelElement = styled.label<CommonInputProps>`
 				text-shadow: 1px 1px 1px #022a5a2c;
 				letter-spacing: .2px;
 				text-transform: capitalize;
+
+				@media screen and (min-width: 769px) {
+					.plan:hover & {
+						cursor: pointer;
+					}
+				}
 			`;
 		} else if ($type === 'checkbox') {
 			return css`
