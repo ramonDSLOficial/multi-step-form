@@ -59,7 +59,16 @@ export const ChangePlanbtn = styled(Link)`
 	color: ${(props) => props.theme.colors.neutral.first};
 	font-size: 1.2rem;
 	font-weight: ${(props) => props.theme.font.weight.secundary};
-	text-decoration-color: gray;
+	text-decoration-color: ${(props) => props.theme.font.weight.secundary};
+    
+    @media screen and (min-width: 769px) {
+        transition: color .5s ease-in-out, text-decoration-color .5s ease-in-out;
+
+        &:hover {
+            color: ${(props) => props.theme.colors.primary.second};
+            text-decoration-color: ${(props) => props.theme.colors.primary.second};
+        }
+    }
 `;
 
 export const Term = styled.p`
