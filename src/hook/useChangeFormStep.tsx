@@ -1,4 +1,3 @@
-import { type BaseSyntheticEvent } from "react";
 import { useLocation, useNavigate } from "react-router-dom"
 import { PATHS } from "../routes/paths";
 
@@ -11,7 +10,7 @@ const routesIndex: Record<string, number> = Object.fromEntries(
 type UseChangeFormStepReturn = {
     currentStep: number,
     lastFormStepIndex: number,
-    changeStep: (e: BaseSyntheticEvent) => void
+    changeStep: (e: React.MouseEvent) => void
 }
 
 const lastFormStepIndex = Object.values(PATHS.steps).length - 2;
@@ -23,7 +22,7 @@ const useChangeFormStep = (): UseChangeFormStepReturn => {
     const currentStep = routesIndex[pathname] ?? 0
 
     
-    const changeStep = (e: BaseSyntheticEvent) => {
+    const changeStep = (e: React.MouseEvent) => {
         const target = e.currentTarget as HTMLButtonElement  
         const changeForm = target.dataset?.variant 
         

@@ -1,4 +1,4 @@
-import React, { type HTMLAttributes } from 'react';
+import { type HTMLAttributes } from 'react';
 
 import { Container } from './styles';
 import useChangeFormStep from '../../hook/useChangeFormStep';
