@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Container, FormContanier } from './styles';
 import Title from '../../components/Title';
 import Paragraph from '../../components/Paragraph';

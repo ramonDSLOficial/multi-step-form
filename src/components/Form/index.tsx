@@ -1,11 +1,17 @@
-import React, { type FormHTMLAttributes } from 'react';
+import { type FormHTMLAttributes } from 'react';
 
-// import { FormProvider } from 'react-hook-form';
 import { Container } from './styles';
-// vai virar o formprivder
-// mudar para form atributes
-const Form: React.FC<FormHTMLAttributes<HTMLFormElement>> = ({ children }) => {
-	return <Container>{children}</Container>;
+import FormFooter from '../FormFooter';
+import { Outlet } from 'react-router-dom';
+
+const Form: React.FC<FormHTMLAttributes<HTMLFormElement>> = () => {
+	return (
+		<Container>
+			<Outlet />
+			
+			<FormFooter />
+		</Container>
+	);
 };
 
 export default Form;
