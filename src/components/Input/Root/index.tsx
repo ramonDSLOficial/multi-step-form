@@ -3,13 +3,13 @@ import { InputContext, type InputType } from '../InputContext';
 import { Container } from './styles';
 
 export interface RootProps extends React.HTMLAttributes<HTMLDivElement> {
-	error?: string;
+	helperText?: string;
 	$type: InputType;
 	inputClassName?: string;
 }
 
 const Root: React.FunctionComponent<RootProps> = ({
-	error,
+	helperText,
 	$type,
 	className,
 	inputClassName,
@@ -17,7 +17,7 @@ const Root: React.FunctionComponent<RootProps> = ({
 }) => {
 	const inputId = useId();
 	return (
-		<InputContext.Provider value={{ inputId, $type, error, inputClassName }}>
+		<InputContext.Provider value={{ inputId, $type, helperText, inputClassName }}>
 			<Container className={`${inputClassName} ${className}`} $type={$type}>
 				{children}
 			</Container>

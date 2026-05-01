@@ -11,7 +11,7 @@ export type InputType =
 
 interface InputContextData {
 	inputId: string;
-	error?: string;
+	helperText?: string;
 	$type: InputType;
 	inputClassName?: string;
 }
