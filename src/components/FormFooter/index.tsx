@@ -5,7 +5,7 @@ import useChangeFormStep from '../../hook/useChangeFormStep';
 import Button from '../Button';
 
 const FormFooter: React.FC<HTMLAttributes<HTMLHtmlElement>> = () => {
-    const {currentStep, changeStep, lastFormStepIndex} = useChangeFormStep()
+    const {currentStep, changeStep, lastFormStepIndex } = useChangeFormStep()
     
     return (
         currentStep <= lastFormStepIndex && <Container>
@@ -27,8 +27,8 @@ const FormFooter: React.FC<HTMLAttributes<HTMLHtmlElement>> = () => {
                 currentStep === lastFormStepIndex ?
                     <Button 
                         label='confirm'
-                        variant='next'
-                        changeStep={changeStep}
+                        type='submit'
+                        variant='send'
                     /> :
                     null
             }

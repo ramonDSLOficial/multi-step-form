@@ -20,7 +20,6 @@ const useChangeFormStep = (): UseChangeFormStepReturn => {
     const { pathname } = useLocation()
 
     const currentStep = routesIndex[pathname] ?? 0
-
     
     const changeStep = (e: React.MouseEvent) => {
         const target = e.currentTarget as HTMLButtonElement  

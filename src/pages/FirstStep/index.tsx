@@ -2,14 +2,15 @@ import { Container } from './styles';
 import Title from '../../components/Title';
 import Paragraph from '../../components/Paragraph';
 import { Input } from '../../components/Input';
-import { Controller, useFormContext } from 'react-hook-form';
+import { Controller, useFormContext, useFormState } from 'react-hook-form';
 import type { FormProps } from '../../schemas/schemas.ts';
 
 const FirstStep: React.FC = () => {
 	const {
 		control,
-		formState: { errors },
+		register,
 	} = useFormContext<FormProps>();
+	const { errors } = useFormState<FormProps>()
 
 	return (
 		<Container>
@@ -22,12 +23,12 @@ const FirstStep: React.FC = () => {
 				<Controller
 					name="name"
 					control={control}
-					render={(fields) => {
+					render={({ field }) => {
 						return (
 							<Input.Root $type="text" helperText={errors.name?.message}>
 								<Input.Label label="name" />
 								<Input.InputElement
-									{...fields}
+									{...field}
 									placeholder="e.g. Stephen King"
 								/>
 								<Input.Error />
@@ -39,7 +40,7 @@ const FirstStep: React.FC = () => {
 				<Controller
 					name="email"
 					control={control}
-					render={(field) => {
+					render={({ field }) => {
 						return (
 							<Input.Root $type="text" helperText={errors.email?.message}>
 								<Input.Label label="Email Address" />
@@ -50,9 +51,9 @@ const FirstStep: React.FC = () => {
 					}}
 				/>
 
-				<Input.Root $type="text">
+				<Input.Root $type="text" helperText={errors.phone?.message}>
 					<Input.Label label="Phone Number" />
-					<Input.InputElement placeholder="e.g. +1 234 567 890" />
+					<Input.InputElement {...register('phone')} placeholder="e.g. +1 234 567 890" />
 					<Input.Error />
 				</Input.Root>
 			</section>
