@@ -2,6 +2,7 @@ import { Container } from './styles';
 import Title from '../../components/Title';
 import Paragraph from '../../components/Paragraph';
 import { Input } from '../../components/Input';
+
 import { Controller, useFormContext, useFormState } from 'react-hook-form';
 import type { FormProps } from '../../schemas/schemas.ts';
 import { phoneMask } from '../../utils/masks/phone.ts';
@@ -21,7 +22,7 @@ const FirstStep: React.FC = () => {
 				<Controller
 					name="name"
 					control={control}
-					render={({ field }) => {
+					render={({ field, fieldState }) => {
 						return (
 							<Input.Root
 								$type="text"
@@ -30,6 +31,7 @@ const FirstStep: React.FC = () => {
 								<Input.Label label="name" />
 								<Input.InputElement
 									{...field}
+									className={fieldState.invalid ? 'invalid' : ''}
 									placeholder="e.g. Stephen King"
 								/>
 								<Input.Error />
@@ -41,7 +43,7 @@ const FirstStep: React.FC = () => {
 				<Controller
 					name="email"
 					control={control}
-					render={({ field }) => {
+					render={({ field, fieldState }) => {
 						return (
 							<Input.Root
 								$type="text"
@@ -50,6 +52,7 @@ const FirstStep: React.FC = () => {
 								<Input.Label label="Email Address" />
 								<Input.InputElement
 									{...field}
+									className={fieldState.invalid ? 'invalid' : ''}
 									placeholder="e.g. stephenking@lorem.com"
 								/>
 								<Input.Error />
@@ -61,7 +64,7 @@ const FirstStep: React.FC = () => {
 				<Controller
 					name="phone"
 					control={control}
-					render={({ field }) => {
+					render={({ field, fieldState }) => {
 						return (
 							<Input.Root
 								$type="text"
@@ -70,6 +73,7 @@ const FirstStep: React.FC = () => {
 								<Input.Label label="Phone Number" />
 								<Input.InputElement
 									{...field}
+									className={fieldState.invalid ? 'invalid' : ''}
 									value={phoneMask(field.value || "")}
 									onChange={e => field.onChange(e.target.value)}
 									placeholder="e.g. 99 99999-9999"

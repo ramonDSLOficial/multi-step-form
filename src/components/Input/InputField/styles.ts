@@ -15,14 +15,15 @@ export const Input = styled.input<Omit<CommonInputProps, '$type'>>`
 		&::placeholder {
 			color: ${(props) => props.theme.colors.neutral.first};
 		}
-
+		
+		&.invalid {
+			border-color: ${(props) => props.theme.colors.primary.fifth};
+		}
+		
 		&:focus-within {
 			border-color: ${(props) => props.theme.colors.primary.second};
 		}
 
-		&:invalid {
-			border-color: ${(props) => props.theme.colors.primary.fifth};
-		}
 
 		@media screen and (min-width: 769px) {
 			grid-area: input;
