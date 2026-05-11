@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom"
 import { PATHS } from "../routes/paths";
-import { type ButtonVariants } from "../components/Button";
+import type { FormDirection } from "../types/types";
 
 const ROUTES = Object.values(PATHS.steps) 
 
@@ -13,8 +13,6 @@ type UseChangeFormStepReturn = {
     lastFormStepIndex: number,
     changeStep: (formDirection: FormDirection) => void
 }
-
-export type FormDirection = Omit<ButtonVariants, 'send'> 
 
 const lastFormStepIndex = Object.values(PATHS.steps).length - 2;
 

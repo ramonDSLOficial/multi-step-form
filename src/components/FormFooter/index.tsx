@@ -3,9 +3,10 @@ import React from 'react';
 
 import { Container } from './styles';
 import { useFormContext, type SubmitHandler } from 'react-hook-form';
-import useChangeFormStep, { type FormDirection } from '../../hook/useChangeFormStep';
+import useChangeFormStep from '../../hook/useChangeFormStep';
 import Button from '../Button';
 import { stepSchemas, type FormProps } from '../../schemas/schemas';
+import type { FormDirection } from '../../types/types';
 
 const FormFooter: React.FC<React.HTMLAttributes<HTMLHtmlElement>> = () => {
 	const { currentStep, changeStep, lastFormStepIndex } = useChangeFormStep();

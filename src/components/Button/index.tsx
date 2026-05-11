@@ -1,9 +1,7 @@
 import React from 'react';
 
 import { Container } from './styles';
-
-export type ButtonVariants = 'prev' | 'send' | 'next';
-
+import type { ButtonVariants } from '../../types/types';
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>{
   variant: ButtonVariants,
   label: string,
