@@ -7,15 +7,15 @@ type ButtonVariants = 'prev' | 'send' | 'next';
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>{
   variant: ButtonVariants,
   label: string,
-  changeStep?: (e: React.MouseEvent) => void
+  handleClick?: (e: React.MouseEvent) => void
 }
 
-const Button: React.FC<ButtonProps> = ({ label, type='button', variant, changeStep}) => {
+const Button: React.FC<ButtonProps> = ({ label, type='button', variant, handleClick}) => {
   return (
     <Container
       data-variant={variant}
       type={type}
-      onClick={changeStep}
+      onClick={handleClick}
       >
       {label}
     </Container>

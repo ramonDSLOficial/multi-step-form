@@ -1,11 +1,32 @@
-import { type HTMLAttributes } from 'react';
+import { ZodObject } from "zod";
+import React from "react";
 
 import { Container } from './styles';
+import { useFormContext, type SubmitHandler } from 'react-hook-form';
 import useChangeFormStep from '../../hook/useChangeFormStep';
 import Button from '../Button';
+import { stepSchemas, type FormProps } from '../../schemas/schemas';
 
-const FormFooter: React.FC<HTMLAttributes<HTMLHtmlElement>> = () => {
+const FormFooter: React.FC<React.HTMLAttributes<HTMLHtmlElement>> = () => {
     const {currentStep, changeStep, lastFormStepIndex } = useChangeFormStep()
+    const { handleSubmit, trigger } = useFormContext<FormProps>()
+
+    const schemaByStep: Record<number, ZodObject> = {
+        0: stepSchemas.first,
+        1: stepSchemas.second,
+        2: stepSchemas.third,
+    }
+
+    const goNext = async (e: React.MouseEvent) => {
+        const fieldToValidade = schemaByStep[currentStep] ? (Object.keys(schemaByStep[currentStep].shape) as (keyof FormProps)[]) : []
+        
+        const isValid = await trigger(fieldToValidade)
+        if (!isValid) return
+
+        changeStep(e)
+    }
+
+	const submitForm: SubmitHandler<FormProps> = data => console.log('data', data);
     
     return (
         currentStep <= lastFormStepIndex && <Container>
@@ -14,7 +35,7 @@ const FormFooter: React.FC<HTMLAttributes<HTMLHtmlElement>> = () => {
                     <Button 
                         label='go back'
                         variant='prev'
-                        changeStep={changeStep}
+                        handleClick={changeStep}
                     /> 
             }
             {
@@ -22,13 +43,14 @@ const FormFooter: React.FC<HTMLAttributes<HTMLHtmlElement>> = () => {
                     <Button 
                         label='next step'
                         variant='next'
-                        changeStep={changeStep}
+                        handleClick={goNext}
                     /> : 
                 currentStep === lastFormStepIndex ?
                     <Button 
                         label='confirm'
                         type='submit'
                         variant='send'
+                        handleClick={handleSubmit(submitForm)}
                     /> :
                     null
             }
