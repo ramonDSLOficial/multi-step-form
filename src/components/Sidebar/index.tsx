@@ -9,7 +9,6 @@ const Slidebar: React.FC = () => {
         <StepSummary 
           stage={1}
           name='your info'
-          id='current'
         />
         <StepSummary 
           stage={2}

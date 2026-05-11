@@ -33,6 +33,7 @@ export const Stage = styled.p`
 	border: 1px solid ${(props) => props.theme.colors.neutral.third};
 	padding: 4.8px 9px;
 	border-radius: 50%;
+	transition: all .5s ease-in-out;
 
 	#current & {
 		color: ${(props) => props.theme.colors.primary.first};

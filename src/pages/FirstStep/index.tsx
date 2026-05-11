@@ -76,7 +76,7 @@ const FirstStep: React.FC = () => {
 									className={fieldState.invalid ? 'invalid' : ''}
 									value={phoneMask(field.value || "")}
 									onChange={e => field.onChange(e.target.value)}
-									placeholder="e.g. 99 99999-9999"
+									placeholder="e.g. (99) 99999-9999"
 								/>
 								<Input.Error />
 							</Input.Root>
