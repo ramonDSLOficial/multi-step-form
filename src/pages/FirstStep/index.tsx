@@ -4,13 +4,11 @@ import Paragraph from '../../components/Paragraph';
 import { Input } from '../../components/Input';
 import { Controller, useFormContext, useFormState } from 'react-hook-form';
 import type { FormProps } from '../../schemas/schemas.ts';
+import { phoneMask } from '../../utils/masks/phone.ts';
 
 const FirstStep: React.FC = () => {
-	const {
-		control,
-		register,
-	} = useFormContext<FormProps>();
-	const { errors } = useFormState<FormProps>()
+	const { control } = useFormContext<FormProps>();
+	const { errors } = useFormState<FormProps>();
 
 	return (
 		<Container>
@@ -25,7 +23,10 @@ const FirstStep: React.FC = () => {
 					control={control}
 					render={({ field }) => {
 						return (
-							<Input.Root $type="text" helperText={errors.name?.message}>
+							<Input.Root
+								$type="text"
+								helperText={errors.name?.message}
+							>
 								<Input.Label label="name" />
 								<Input.InputElement
 									{...field}
@@ -42,20 +43,42 @@ const FirstStep: React.FC = () => {
 					control={control}
 					render={({ field }) => {
 						return (
-							<Input.Root $type="text" helperText={errors.email?.message}>
+							<Input.Root
+								$type="text"
+								helperText={errors.email?.message}
+							>
 								<Input.Label label="Email Address" />
-								<Input.InputElement {...field} placeholder="e.g. stephenking@lorem.com" />
+								<Input.InputElement
+									{...field}
+									placeholder="e.g. stephenking@lorem.com"
+								/>
 								<Input.Error />
 							</Input.Root>
 						);
 					}}
 				/>
 
-				<Input.Root $type="text" helperText={errors.phone?.message}>
-					<Input.Label label="Phone Number" />
-					<Input.InputElement {...register('phone')} placeholder="e.g. +1 234 567 890" />
-					<Input.Error />
-				</Input.Root>
+				<Controller
+					name="phone"
+					control={control}
+					render={({ field }) => {
+						return (
+							<Input.Root
+								$type="text"
+								helperText={errors.phone?.message}
+							>
+								<Input.Label label="Phone Number" />
+								<Input.InputElement
+									{...field}
+									value={phoneMask(field.value || "")}
+									onChange={e => field.onChange(e.target.value)}
+									placeholder="e.g. 99 99999-9999"
+								/>
+								<Input.Error />
+							</Input.Root>
+						);
+					}}
+				/>
 			</section>
 		</Container>
 	);

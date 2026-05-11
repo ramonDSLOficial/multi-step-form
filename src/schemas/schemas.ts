@@ -2,9 +2,21 @@ import z from 'zod';
 
 export const stepSchemas = {
 	first: z.object({
-		name: z.string().min(3, 'minimo de três letras.'),
-		email: z.email({ error: () => ({ message: 'digite um email válido.' }) }),
-		phone: z.string().min(9, 'digite 9'),
+		name: z
+			.string()
+			.trim()
+			.min(3, 'must be three letters!')
+			.regex(/^[a-zçà-ý\s`´]+$/i, 'only letters!'),
+		email: z.email({ error: () => ({ message: 'must be a valid email.' }) }),
+		phone: z
+			.string()
+			.transform((val) => val.replace(/\D/g, ''))
+			.pipe(
+				z
+					.string()
+					.min(10, 'must be a valid phone!')
+					.max(11, 'must be a valid phone!')
+			),
 	}),
 	second: z.object({
 		modality: z.boolean(),
@@ -21,6 +33,6 @@ export const formSchema = z.object({
 	...stepSchemas.third.shape,
 	...stepSchemas.second.shape,
 	...stepSchemas.first.shape,
-})
+});
 
 export type FormProps = z.infer<typeof formSchema>;

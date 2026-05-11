@@ -14,14 +14,14 @@ const FormFooter: React.FC<React.HTMLAttributes<HTMLHtmlElement>> = () => {
 	const schemaByStep: Record<number, ZodObject> = Object.fromEntries(
 		Object.values(stepSchemas).map((schema, i) => [i, schema])
 	);
-    
+
 	const goNext = async (e: React.MouseEvent) => {
 		const fieldToValidade = schemaByStep[currentStep]
 			? (Object.keys(schemaByStep[currentStep].shape) as (keyof FormProps)[])
 			: [];
 
 		const isValid = await trigger(fieldToValidade);
-        
+
 		if (!isValid) return;
 
 		changeStep(e);
