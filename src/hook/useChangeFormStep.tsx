@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom"
 import { PATHS } from "../routes/paths";
-import type { MouseEvent } from "react";
+import { type ButtonVariants } from "../components/Button";
 
 const ROUTES = Object.values(PATHS.steps) 
 
@@ -11,8 +11,10 @@ const routesIndex: Record<string, number> = Object.fromEntries(
 type UseChangeFormStepReturn = {
     currentStep: number,
     lastFormStepIndex: number,
-    changeStep: (e: MouseEvent) => void
+    changeStep: (formDirection: FormDirection) => void
 }
+
+export type FormDirection = Omit<ButtonVariants, 'send'> 
 
 const lastFormStepIndex = Object.values(PATHS.steps).length - 2;
 
@@ -22,13 +24,10 @@ const useChangeFormStep = (): UseChangeFormStepReturn => {
 
     const currentStep = routesIndex[pathname] ?? 0
     
-    const changeStep = (e: MouseEvent) => {
-        const target = e.currentTarget as HTMLButtonElement  
-        const changeForm = target.dataset?.variant 
+    const changeStep = (formDirection: FormDirection) => {        
+        if (formDirection !== 'prev' && formDirection !== 'next') return    
         
-        if (changeForm !== 'prev' && changeForm !== 'next') return    
-        
-        const nextStep = changeForm == 'next' ? currentStep + 1 : currentStep - 1
+        const nextStep = formDirection == 'next' ? currentStep + 1 : currentStep - 1
         
         if (ROUTES[nextStep]) {
             navigate(ROUTES[nextStep])
