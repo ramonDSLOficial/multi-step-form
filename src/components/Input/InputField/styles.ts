@@ -15,15 +15,14 @@ export const Input = styled.input<Omit<CommonInputProps, '$type'>>`
 		&::placeholder {
 			color: ${(props) => props.theme.colors.neutral.first};
 		}
-		
+
 		&.invalid {
 			border-color: ${(props) => props.theme.colors.primary.fifth};
 		}
-		
+
 		&:focus-within {
 			border-color: ${(props) => props.theme.colors.primary.second};
 		}
-
 
 		@media screen and (min-width: 769px) {
 			grid-area: input;
@@ -55,16 +54,16 @@ export const Input = styled.input<Omit<CommonInputProps, '$type'>>`
 				position: absolute;
 				content: '';
 				top: 3px;
-				right: 8%;
+				left: 8%;
 				width: 8.5px;
 				height: 8.5px;
 				border-radius: 50%;
 				background-color: ${(props) => props.theme.colors.neutral.white};
-				transition: right 0.5s ease-in-out;
+				transition: left 0.5s ease-in-out;
 			}
 
 			&:checked::after {
-				right: 58.5%;
+				left: 58.5%;
 			}
 		}
 

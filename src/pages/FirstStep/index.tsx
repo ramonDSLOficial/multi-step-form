@@ -75,6 +75,7 @@ const FirstStep: React.FC = () => {
 									{...field}
 									className={fieldState.invalid ? 'invalid' : ''}
 									value={phoneMask(field.value || "")}
+									// testar se pode tirar aqui VVV
 									onChange={e => field.onChange(e.target.value)}
 									placeholder="e.g. (99) 99999-9999"
 								/>
