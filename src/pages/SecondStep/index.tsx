@@ -17,21 +17,41 @@ const SecondStep: React.FC = () => {
 				<section>
 					{['arcade', 'advanced', 'pro'].map((planType) => {
 						return (
-							<Input.Root $type="radio" inputClassName="plan">
-								<Input.Icon
-									source={`/images/icon-${planType}.svg`}
-									alt={`${planType} plan icon`}
-								/>
+							<Controller
+								key={planType}
+								name='plan'
+								control={control}
+								render={({ field }) => {
+									return (
+										<Input.Root
+											$type="radio"
+											inputClassName="plan"
+											className={field.value === planType ? 'selected' : ''}
+										>
+											<Input.Icon
+												source={`/images/icon-${planType}.svg`}
+												alt={`${planType} plan icon`}
+											/>
 
-								<div>
-									<Input.Label label={planType} />
-									<Input.Description>$9/mo</Input.Description>
-									<Input.Description className="advantage">
-										2 months free
-									</Input.Description>
-									<Input.InputElement />
-								</div>
-							</Input.Root>
+											<div>
+												<Input.Label label={planType} />
+												<Input.Description>
+													$9/mo
+												</Input.Description>
+												<Input.Description className="advantage">
+													2 months free
+												</Input.Description>
+												<Input.InputElement 
+													{...field}
+													value={planType}
+													checked={field.value === planType}
+													onChange={() => field.onChange(planType)}
+												/>
+											</div>
+										</Input.Root>
+									);
+								}}
+							/>
 						);
 					})}
 				</section>

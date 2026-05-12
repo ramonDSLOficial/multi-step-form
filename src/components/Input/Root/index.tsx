@@ -16,9 +16,17 @@ const Root: React.FunctionComponent<RootProps> = ({
 	children,
 }) => {
 	const inputId = useId();
+	const isRadio = $type === 'radio';
 	return (
-		<InputContext.Provider value={{ inputId, $type, helperText, inputClassName }}>
-			<Container className={`${inputClassName} ${className}`} $type={$type}>
+		<InputContext.Provider
+			value={{ inputId, $type, helperText, inputClassName }}
+		>
+			<Container
+				className={`${inputClassName} ${className}`}
+				$type={$type}
+				as={isRadio ? 'label' : ''}
+				htmlFor={inputId}
+			>
 				{children}
 			</Container>
 		</InputContext.Provider>
