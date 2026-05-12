@@ -2,14 +2,13 @@ import { Container, FormContanier } from './styles';
 import Title from '../../components/Title';
 import Paragraph from '../../components/Paragraph';
 import { Input } from '../../components/Input';
-import { Controller, useFormContext, useWatch } from 'react-hook-form';
+import { Controller, useFormContext } from 'react-hook-form';
 import type { FormProps } from '../../schemas/schemas';
+import useModality from '../../hook/useModality';
 
 const SecondStep: React.FC = () => {
 	const { control } = useFormContext<FormProps>();
-
-	// todo: elevar isso aqui para um hook pq vou precisar para outra step
-	const modality = useWatch({ control, name: 'modality' });
+	const modality = useModality()
 
 	return (
 		<Container>

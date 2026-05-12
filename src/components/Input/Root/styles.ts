@@ -45,7 +45,7 @@ export const Container = styled.div<CommonInputProps>`
 					flex-direction: column;
 					gap: 30px;
 					width: 30%;
-					max-height: ${!$yearModality ? '105px' : '120px'};
+					max-height: ${!$yearModality ? '105px' : '122px'};
 					align-items: flex-start;
 
 					&:hover {
