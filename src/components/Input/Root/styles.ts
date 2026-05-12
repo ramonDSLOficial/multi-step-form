@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import type { CommonInputProps } from '../transientsProps';
 
 export const Container = styled.div<CommonInputProps>`
-	${({ $type }) => {
+	${({ $type, $yearModality }) => {
 		if ($type === 'text' || $type === 'email') {
 			return css`
 				display: grid;
@@ -21,9 +21,13 @@ export const Container = styled.div<CommonInputProps>`
 			return css`
 				display: flex;
 				gap: 10px;
-				padding: 12px;
+				padding: 10px;
+				max-height: ${!$yearModality ? '50px' : '65px'};
+				overflow-y: hidden;
 				border: 1px solid ${(props) => props.theme.colors.neutral.second};
 				border-radius: 5px;
+				transition: border-color 0.5s ease-in-out,
+					background-color 0.5s ease-in-out, max-height 1s ease-in-out;
 
 				&.selected {
 					border-color: ${(props) => props.theme.colors.primary.second};
@@ -41,8 +45,8 @@ export const Container = styled.div<CommonInputProps>`
 					flex-direction: column;
 					gap: 30px;
 					width: 30%;
+					max-height: ${!$yearModality ? '105px' : '120px'};
 					align-items: flex-start;
-					transition: border-color 0.5s ease-in-out;
 
 					&:hover {
 						cursor: pointer;
@@ -91,7 +95,7 @@ export const Container = styled.div<CommonInputProps>`
 
 					@media screen and (min-width: 769px) {
 						padding: 15px;
-						transition: border-color .5s ease-in-out;
+						transition: border-color 0.5s ease-in-out;
 
 						&:hover {
 							cursor: pointer;

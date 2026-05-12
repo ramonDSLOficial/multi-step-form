@@ -6,11 +6,13 @@ export interface RootProps extends React.HTMLAttributes<HTMLDivElement> {
 	helperText?: string;
 	$type: InputType;
 	inputClassName?: string;
+	$yearModality?: boolean;
 }
 
 const Root: React.FunctionComponent<RootProps> = ({
 	helperText,
 	$type,
+	$yearModality,
 	className,
 	inputClassName,
 	children,
@@ -26,6 +28,7 @@ const Root: React.FunctionComponent<RootProps> = ({
 				$type={$type}
 				as={isRadio ? 'label' : ''}
 				htmlFor={inputId}
+				$yearModality={$yearModality}
 			>
 				{children}
 			</Container>

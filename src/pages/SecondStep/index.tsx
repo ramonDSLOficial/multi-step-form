@@ -2,11 +2,14 @@ import { Container, FormContanier } from './styles';
 import Title from '../../components/Title';
 import Paragraph from '../../components/Paragraph';
 import { Input } from '../../components/Input';
-import { Controller, useFormContext } from 'react-hook-form';
+import { Controller, useFormContext, useWatch } from 'react-hook-form';
 import type { FormProps } from '../../schemas/schemas';
 
 const SecondStep: React.FC = () => {
 	const { control } = useFormContext<FormProps>();
+
+	// todo: elevar isso aqui para um hook pq vou precisar para outra step
+	const modality = useWatch({ control, name: 'modality' });
 
 	return (
 		<Container>
@@ -19,14 +22,19 @@ const SecondStep: React.FC = () => {
 						return (
 							<Controller
 								key={planType}
-								name='plan'
+								name="plan"
 								control={control}
 								render={({ field }) => {
 									return (
 										<Input.Root
 											$type="radio"
 											inputClassName="plan"
-											className={field.value === planType ? 'selected' : ''}
+											$yearModality={modality}
+											className={
+												field.value === planType
+													? 'selected'
+													: ''
+											}
 										>
 											<Input.Icon
 												source={`/images/icon-${planType}.svg`}
@@ -41,11 +49,15 @@ const SecondStep: React.FC = () => {
 												<Input.Description className="advantage">
 													2 months free
 												</Input.Description>
-												<Input.InputElement 
+												<Input.InputElement
 													{...field}
 													value={planType}
-													checked={field.value === planType}
-													onChange={() => field.onChange(planType)}
+													checked={
+														field.value === planType
+													}
+													onChange={() =>
+														field.onChange(planType)
+													}
 												/>
 											</div>
 										</Input.Root>
