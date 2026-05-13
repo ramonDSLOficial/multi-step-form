@@ -18,7 +18,8 @@ const Root: React.FunctionComponent<RootProps> = ({
 	children,
 }) => {
 	const inputId = useId();
-	const isRadio = $type === 'radio';
+	// * mudar o nome desse isRadio
+	const isRadio = $type === 'radio' || inputClassName === 'aditions';
 	return (
 		<InputContext.Provider
 			value={{ inputId, $type, helperText, inputClassName }}

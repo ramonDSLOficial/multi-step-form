@@ -9,9 +9,9 @@ import { formSchema, type FormProps } from '../../schemas/schemas';
 
 const Form: React.FC<FormHTMLAttributes<HTMLFormElement>> = () => {
 	const methods = useForm<FormProps>({
-		mode: 'onBlur',
+		mode: 'onSubmit',
 		criteriaMode: 'all',
-		reValidateMode: 'onChange',
+		reValidateMode: 'onBlur',
 		shouldUnregister: false,
 		resolver: zodResolver(formSchema),
 		defaultValues: {

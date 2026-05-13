@@ -79,6 +79,7 @@ export const Container = styled.div<CommonInputProps>`
 					border: 1.5px solid
 						${(props) => props.theme.colors.neutral.second};
 					border-radius: 5px;
+					transition: border-color .5s ease-in-out, background-color .5s ease-in-out;
 
 					& > div {
 						display: flex;
@@ -95,7 +96,6 @@ export const Container = styled.div<CommonInputProps>`
 
 					@media screen and (min-width: 769px) {
 						padding: 15px;
-						transition: border-color 0.5s ease-in-out;
 
 						&:hover {
 							cursor: pointer;
