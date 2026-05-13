@@ -5,11 +5,11 @@ import { Input } from '../../components/Input';
 import { Controller, useFormContext } from 'react-hook-form';
 import type { FormProps } from '../../schemas/schemas';
 import useModality from '../../hook/useModality';
+import { bussinesPlan } from '../../store/store';
 
 const SecondStep: React.FC = () => {
 	const { control } = useFormContext<FormProps>();
 	const modality = useModality()
-
 	return (
 		<Container>
 			<Title>Select your plan</Title>
@@ -43,7 +43,7 @@ const SecondStep: React.FC = () => {
 											<div>
 												<Input.Label label={planType} />
 												<Input.Description>
-													$9/mo
+													{bussinesPlan.plan[field.value][!modality ? 'monthly' : 'yearly']}
 												</Input.Description>
 												<Input.Description className="advantage">
 													2 months free

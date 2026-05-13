@@ -22,7 +22,7 @@ const FourthStep: React.FC = () => {
 				<section>
 					<Clause className="plan">
 						<div>
-							<Term>Arcade (monthly)</Term>
+							<Term>Arcade &#40;monthly&#41;</Term>
 							<ChangePlanbtn to={PATHS.steps.second}>
 								Change
 							</ChangePlanbtn>
@@ -43,7 +43,7 @@ const FourthStep: React.FC = () => {
 				</section>
 
 				<Clause>
-					<Term>Total (per month)</Term>
+					<Term>Total &#40;per month&#41;</Term>
 					<Price className="total">+$12/mo</Price>
 				</Clause>
 			</PlanDetails>
