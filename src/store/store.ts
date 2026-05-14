@@ -1,33 +1,4 @@
-type BussinesPlan = {
-	plan: {
-		arcade: {
-			monthly: string;
-			yearly: string;
-		};
-		advanced: {
-			monthly: string;
-			yearly: string;
-		};
-		pro: {
-			monthly: string;
-			yearly: string;
-		};
-	};
-	onlineService: {
-		monthly: string;
-		yearly: string;
-	};
-	extraStorage: {
-		monthly: string;
-		yearly: string;
-	};
-	customProfile: {
-		monthly: string;
-		yearly: string;
-	};
-};
-
-export const bussinesPlan: BussinesPlan = {
+export const bussinesPlan = {
 	plan: {
 		arcade: {
 			monthly: '+$9/mo',
@@ -54,4 +25,4 @@ export const bussinesPlan: BussinesPlan = {
 		monthly: '+$2/mo',
 		yearly: '+$20/yr',
 	},
-};
+} as const;

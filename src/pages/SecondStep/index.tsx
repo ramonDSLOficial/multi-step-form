@@ -10,6 +10,7 @@ import { bussinesPlan } from '../../store/store';
 const SecondStep: React.FC = () => {
 	const { control } = useFormContext<FormProps>();
 	const modality = useModality()
+	
 	return (
 		<Container>
 			<Title>Select your plan</Title>
