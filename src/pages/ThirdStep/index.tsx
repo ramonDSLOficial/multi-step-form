@@ -5,6 +5,7 @@ import { Input } from '../../components/Input';
 import useModality from '../../hook/useModality';
 import { Controller, useFormContext } from 'react-hook-form';
 import type { FormProps } from '../../schemas/schemas';
+import { bussinesPlan } from '../../store/store';
 
 const ThirdStep: React.FC = () => {
 	const { control } = useFormContext<FormProps>();
@@ -43,7 +44,11 @@ const ThirdStep: React.FC = () => {
 								</div>
 
 								<Input.Description className="price">
-									{!modality ? '+$1/mo' : '+$10/yr'}
+									{
+										bussinesPlan.onlineService[
+											!modality ? 'monthly' : 'yearly'
+										]
+									}
 								</Input.Description>
 							</Input.Root>
 						);
@@ -77,47 +82,54 @@ const ThirdStep: React.FC = () => {
 								</div>
 
 								<Input.Description className="price">
-									{!modality ? '+$2/mo' : '+$20/yr'}
+									{
+										bussinesPlan.extraStorage[
+											!modality ? 'monthly' : 'yearly'
+										]
+									}
 								</Input.Description>
 							</Input.Root>
 						);
 					}}
 				/>
-				{
-					<Controller
-						name="customProfile"
-						control={control}
-						render={({ field }) => {
-							return (
-								<Input.Root
-									$type="checkbox"
-									inputClassName="aditions"
-									className={field.value ? 'selected' : ''}
-								>
-									<Input.InputElement
-										{...field}
-										value={undefined}
-										checked={field.value}
-										onChange={(e) =>
-											field.onChange(e.target.checked)
-										}
-									/>
 
-									<div>
-										<Input.Label label="Customizable Profile" />
-										<Input.Description className="additionDesc">
-											Custom theme on your profile
-										</Input.Description>
-									</div>
+				<Controller
+					name="customProfile"
+					control={control}
+					render={({ field }) => {
+						return (
+							<Input.Root
+								$type="checkbox"
+								inputClassName="aditions"
+								className={field.value ? 'selected' : ''}
+							>
+								<Input.InputElement
+									{...field}
+									value={undefined}
+									checked={field.value}
+									onChange={(e) =>
+										field.onChange(e.target.checked)
+									}
+								/>
 
-									<Input.Description className="price">
-										{!modality ? '+$2/mo' : '+$20/yr'}
+								<div>
+									<Input.Label label="Customizable Profile" />
+									<Input.Description className="additionDesc">
+										Custom theme on your profile
 									</Input.Description>
-								</Input.Root>
-							);
-						}}
-					/>
-				}
+								</div>
+
+								<Input.Description className="price">
+									{
+										bussinesPlan.customProfile[
+											!modality ? 'monthly' : 'yearly'
+										]
+									}
+								</Input.Description>
+							</Input.Root>
+						);
+					}}
+				/>
 			</section>
 		</Container>
 	);
