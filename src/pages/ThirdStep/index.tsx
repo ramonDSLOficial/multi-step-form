@@ -44,11 +44,7 @@ const ThirdStep: React.FC = () => {
 								</div>
 
 								<Input.Description className="price">
-									{
-										bussinesPlan.onlineService[
-											!modality ? 'monthly' : 'yearly'
-										]
-									}
+									{bussinesPlan.onlineService[modality]}
 								</Input.Description>
 							</Input.Root>
 						);
@@ -82,11 +78,7 @@ const ThirdStep: React.FC = () => {
 								</div>
 
 								<Input.Description className="price">
-									{
-										bussinesPlan.extraStorage[
-											!modality ? 'monthly' : 'yearly'
-										]
-									}
+									{bussinesPlan.extraStorage[modality]}
 								</Input.Description>
 							</Input.Root>
 						);
@@ -120,11 +112,7 @@ const ThirdStep: React.FC = () => {
 								</div>
 
 								<Input.Description className="price">
-									{
-										bussinesPlan.customProfile[
-											!modality ? 'monthly' : 'yearly'
-										]
-									}
+									{bussinesPlan.customProfile[modality]}
 								</Input.Description>
 							</Input.Root>
 						);

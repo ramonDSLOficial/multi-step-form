@@ -29,7 +29,7 @@ const SecondStep: React.FC = () => {
 										<Input.Root
 											$type="radio"
 											inputClassName="plan"
-											$yearModality={modality}
+											$yearModality={!!modality}
 											className={
 												field.value === planType
 													? 'selected'
