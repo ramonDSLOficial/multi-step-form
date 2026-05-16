@@ -1,13 +1,18 @@
-import { useFormContext, useWatch } from "react-hook-form";
-import type { FormProps } from "../schemas/schemas";
+import { useFormContext, useWatch } from 'react-hook-form';
+import type { FormProps } from '../schemas/schemas';
 
-type useModalityReturn = 'monthly' | 'yearly'
+type useModalityReturn = {
+	modality: 'monthly' | 'yearly';
+	priceSufix: 'mo' | 'yr';
+};
 
 const useModality = (): useModalityReturn => {
 	const { control } = useFormContext<FormProps>();
-	const modality = useWatch({ control, name: 'modality' });
+	const watchedModality = useWatch({ control, name: 'modality' });
+	const modality = !watchedModality ? 'monthly' : 'yearly';
+	const priceSufix = modality === 'monthly' ? 'mo' : 'yr';
 
-	return !modality ? 'monthly' : 'yearly';
+	return { modality, priceSufix };
 };
 
 export default useModality;

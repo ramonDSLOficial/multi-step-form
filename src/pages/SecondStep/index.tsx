@@ -9,8 +9,8 @@ import { bussinesPlan } from '../../store/store';
 
 const SecondStep: React.FC = () => {
 	const { control } = useFormContext<FormProps>();
-	const modality = useModality()
-	
+	const { modality, priceSufix } = useModality();
+
 	return (
 		<Container>
 			<Title>Select your plan</Title>
@@ -44,7 +44,13 @@ const SecondStep: React.FC = () => {
 											<div>
 												<Input.Label label={planType} />
 												<Input.Description>
-													{bussinesPlan.plan[field.value][!modality ? 'monthly' : 'yearly']}
+													$
+													{
+														bussinesPlan.plan[
+															field.value
+														][modality]
+													}
+													/{priceSufix}
 												</Input.Description>
 												<Input.Description className="advantage">
 													2 months free

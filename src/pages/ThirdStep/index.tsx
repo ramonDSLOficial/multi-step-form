@@ -9,7 +9,7 @@ import { bussinesPlan } from '../../store/store';
 
 const ThirdStep: React.FC = () => {
 	const { control } = useFormContext<FormProps>();
-	const modality = useModality();
+	const { modality, priceSufix } = useModality();
 
 	return (
 		<Container>
@@ -44,7 +44,8 @@ const ThirdStep: React.FC = () => {
 								</div>
 
 								<Input.Description className="price">
-									{bussinesPlan.onlineService[modality]}
+									+${bussinesPlan.onlineService[modality]}/
+									{priceSufix}
 								</Input.Description>
 							</Input.Root>
 						);
@@ -78,7 +79,8 @@ const ThirdStep: React.FC = () => {
 								</div>
 
 								<Input.Description className="price">
-									{bussinesPlan.extraStorage[modality]}
+									+${bussinesPlan.extraStorage[modality]}/
+									{priceSufix}
 								</Input.Description>
 							</Input.Root>
 						);
@@ -112,7 +114,8 @@ const ThirdStep: React.FC = () => {
 								</div>
 
 								<Input.Description className="price">
-									{bussinesPlan.customProfile[modality]}
+									+${bussinesPlan.customProfile[modality]}/
+									{priceSufix}
 								</Input.Description>
 							</Input.Root>
 						);
