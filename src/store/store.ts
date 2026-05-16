@@ -1,28 +1,28 @@
 export const bussinesPlan = {
 	plan: {
 		arcade: {
-			monthly: '+$9/mo',
-			yearly: '+$90/yr',
+			monthly: 9,
+			yearly: 90,
 		},
 		advanced: {
-			monthly: '+$12/mo',
-			yearly: '+$120/yr',
+			monthly: 12,
+			yearly: 120,
 		},
 		pro: {
-			monthly: '+$15/mo',
-			yearly: '+$150/yr',
+			monthly: 15,
+			yearly: 150,
 		},
 	},
 	onlineService: {
-		monthly: '+$1/mo',
-		yearly: '+$10/yr',
+		monthly: 1,
+		yearly: 10,
 	},
 	extraStorage: {
-		monthly: '+$2/mo',
-		yearly: '+$20/yr',
+		monthly: 2,
+		yearly: 20,
 	},
 	customProfile: {
-		monthly: '+$2/mo',
-		yearly: '+$20/yr',
+		monthly: 2,
+		yearly: 20,
 	},
 } as const;
