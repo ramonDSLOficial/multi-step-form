@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Container = styled.section``;
-
+// ! mudar o .total para o pai e estilizar colocando o captalize
 export const Clause = styled.div`
 	display: flex;
 	justify-content: space-between;
