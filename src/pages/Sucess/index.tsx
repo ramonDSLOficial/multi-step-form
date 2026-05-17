@@ -6,7 +6,7 @@ import { PATHS } from '../../routes/paths';
 const Sucess: React.FC = () => {
 	return (
 		<Container>
-			<img src="/images/icon-thank-you.svg" alt='thank you icon'/>
+			<img aria-hidden='true' src="/images/icon-thank-you.svg" alt='thank you icon'/>
 
 			<Title><RestartForm to={PATHS.home}>Thank you!</RestartForm></Title>
 			

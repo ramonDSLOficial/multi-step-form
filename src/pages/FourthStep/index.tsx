@@ -41,7 +41,7 @@ const FourthStep: React.FC = () => {
 							<Term>
 								{fields[0]} &#40;{modality}&#41;
 							</Term>
-							<ChangePlanbtn to={PATHS.steps.second}>
+							<ChangePlanbtn role='link' to={PATHS.steps.second}>
 								Change
 							</ChangePlanbtn>
 						</div>

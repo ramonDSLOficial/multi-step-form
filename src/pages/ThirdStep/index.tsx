@@ -34,6 +34,7 @@ const ThirdStep: React.FC = () => {
 									onChange={(e) =>
 										field.onChange(e.target.checked)
 									}
+									aria-describedby={`${field.name}-price`}
 								/>
 
 								<div>
@@ -43,7 +44,7 @@ const ThirdStep: React.FC = () => {
 									</Input.Description>
 								</div>
 
-								<Input.Description className="price">
+								<Input.Description className="price" id={`${field.name}-price`}>
 									+${bussinesPlan.onlineService[modality]}/
 									{priceSufix}
 								</Input.Description>
@@ -69,6 +70,7 @@ const ThirdStep: React.FC = () => {
 									onChange={(e) =>
 										field.onChange(e.target.checked)
 									}
+									aria-describedby={`${field.name}-price`}
 								/>
 
 								<div>
@@ -78,7 +80,7 @@ const ThirdStep: React.FC = () => {
 									</Input.Description>
 								</div>
 
-								<Input.Description className="price">
+								<Input.Description className="price" id={`${field.name}-price`}>
 									+${bussinesPlan.extraStorage[modality]}/
 									{priceSufix}
 								</Input.Description>
@@ -104,6 +106,7 @@ const ThirdStep: React.FC = () => {
 									onChange={(e) =>
 										field.onChange(e.target.checked)
 									}
+									aria-describedby={`${field.name}-price`}
 								/>
 
 								<div>
@@ -113,7 +116,7 @@ const ThirdStep: React.FC = () => {
 									</Input.Description>
 								</div>
 
-								<Input.Description className="price">
+								<Input.Description className="price" id={`${field.name}-price`}>
 									+${bussinesPlan.customProfile[modality]}/
 									{priceSufix}
 								</Input.Description>
