@@ -13,41 +13,41 @@ import { useNavigate } from 'react-router-dom';
 const FormFooter: React.FC<React.HTMLAttributes<HTMLHtmlElement>> = () => {
 	const { currentStep, changeStep, lastFormStepIndex } = useChangeFormStep();
 	const { handleSubmit, trigger } = useFormContext<FormProps>();
-	const navigate = useNavigate()
+	const navigate = useNavigate();
 
 	const schemaByStep: Record<number, ZodObject> = Object.fromEntries(
 		Object.values(stepSchemas).map((schema, i) => [i, schema])
 	);
 
 	const getButtonVariant = (e: React.MouseEvent): FormDirection => {
-		const target = e.currentTarget as HTMLButtonElement  
-		const formDirection = target.dataset?.variant ?? ''
-		
-		return formDirection
-	}
+		const target = e.currentTarget as HTMLButtonElement;
+		const formDirection = target.dataset?.variant ?? '';
+
+		return formDirection;
+	};
 
 	const goPrev = (e: React.MouseEvent) => {
-		const formDirection = getButtonVariant(e)
-		changeStep(formDirection)
-	}
-	
+		const formDirection = getButtonVariant(e);
+		changeStep(formDirection);
+	};
+
 	const goNext = async (e: React.MouseEvent) => {
-		const formDirection = getButtonVariant(e)
+		const formDirection = getButtonVariant(e);
 
 		const fieldToValidade = schemaByStep[currentStep]
 			? (Object.keys(schemaByStep[currentStep].shape) as (keyof FormProps)[])
 			: [];
 
 		const isValid = await trigger(fieldToValidade);
-		
+
 		if (!isValid) return;
-		changeStep(formDirection)
+		changeStep(formDirection);
 	};
 
 	const submitForm: SubmitHandler<FormProps> = (data) => {
-		console.log('data', data)
+		console.log('data', data);
 
-		return navigate(PATHS.steps.success)
+		return navigate(PATHS.steps.success);
 	};
 
 	return (
@@ -58,16 +58,23 @@ const FormFooter: React.FC<React.HTMLAttributes<HTMLHtmlElement>> = () => {
 						label="go back"
 						variant="prev"
 						handleClick={goPrev}
+						title="voltar a etapa anterior"
 					/>
 				)}
 				{currentStep < lastFormStepIndex ? (
-					<Button label="next step" variant="next" handleClick={goNext} />
+					<Button
+						label="next step"
+						variant="next"
+						handleClick={goNext}
+						title="ir para próxima etapa"
+					/>
 				) : currentStep === lastFormStepIndex ? (
 					<Button
 						label="confirm"
 						type="submit"
 						variant="send"
 						handleClick={handleSubmit(submitForm)}
+						title="enviar formulário"
 					/>
 				) : null}
 			</Container>

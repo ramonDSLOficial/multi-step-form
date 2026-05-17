@@ -38,8 +38,10 @@ const FirstStep: React.FC = () => {
 									{...field}
 									className={fieldState.invalid ? 'invalid' : undefined}
 									placeholder="e.g. Stephen King"
+									aria-invalid={fieldState.invalid}
+									aria-describedby={`${field.name}-error`}
 								/>
-								<Input.Error />
+								<Input.Error id={`${field.name}-error`}/>
 							</Input.Root>
 						);
 					}}
@@ -59,8 +61,10 @@ const FirstStep: React.FC = () => {
 									{...field}
 									className={fieldState.invalid ? 'invalid' : undefined}
 									placeholder="e.g. stephenking@lorem.com"
+									aria-invalid={fieldState.invalid}
+									aria-describedby={`${field.name}-error`}
 								/>
-								<Input.Error />
+								<Input.Error id={`${field.name}-error`}/>
 							</Input.Root>
 						);
 					}}
@@ -81,8 +85,10 @@ const FirstStep: React.FC = () => {
 									className={fieldState.invalid ? 'invalid' : undefined}
 									value={phoneMask(field.value || "")}
 									placeholder="e.g. (99) 99999-9999"
+									aria-invalid={fieldState.invalid}
+									aria-describedby={`${field.name}-error`}
 								/>
-								<Input.Error />
+								<Input.Error id={`${field.name}-error`}/>
 							</Input.Root>
 						);
 					}}

@@ -20,8 +20,12 @@ export const Input = styled.input<Omit<CommonInputProps, '$type'>>`
 			border-color: ${(props) => props.theme.colors.primary.fifth};
 		}
 
+		&:focus-visible,
 		&:focus-within {
 			border-color: ${(props) => props.theme.colors.primary.second};
+		}
+		&:focus-visible {
+			outline: 1px solid;
 		}
 
 		@media screen and (min-width: 769px) {
