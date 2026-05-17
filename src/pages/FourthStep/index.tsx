@@ -80,7 +80,7 @@ const FourthStep: React.FC = () => {
 				</section>
 
 				<Clause className="total">
-					<Term>Total &#40;per {!!modality ? 'year' : 'month'}&#41;</Term>
+					<Term>Total &#40;per {modality === 'yearly' ? 'year' : 'month'}&#41;</Term>
 					<Price>+${contractTotalValue}/{priceSufix}</Price>
 				</Clause>
 			</PlanDetails>
