@@ -7,10 +7,13 @@ import useChangeFormStep from '../../hook/useChangeFormStep';
 import Button from '../Button';
 import { stepSchemas, type FormProps } from '../../schemas/schemas';
 import type { FormDirection } from '../../types/types';
+import { PATHS } from '../../routes/paths';
+import { useNavigate } from 'react-router-dom';
 
 const FormFooter: React.FC<React.HTMLAttributes<HTMLHtmlElement>> = () => {
 	const { currentStep, changeStep, lastFormStepIndex } = useChangeFormStep();
 	const { handleSubmit, trigger } = useFormContext<FormProps>();
+	const navigate = useNavigate()
 
 	const schemaByStep: Record<number, ZodObject> = Object.fromEntries(
 		Object.values(stepSchemas).map((schema, i) => [i, schema])
@@ -41,7 +44,11 @@ const FormFooter: React.FC<React.HTMLAttributes<HTMLHtmlElement>> = () => {
 		changeStep(formDirection)
 	};
 
-	const submitForm: SubmitHandler<FormProps> = (data) => console.log('data', data);
+	const submitForm: SubmitHandler<FormProps> = (data) => {
+		console.log('data', data)
+
+		return navigate(PATHS.steps.success)
+	};
 
 	return (
 		currentStep <= lastFormStepIndex && (
