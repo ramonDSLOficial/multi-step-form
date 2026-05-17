@@ -18,10 +18,13 @@ const SecondStep: React.FC = () => {
 
 			<FormContanier>
 				<section>
-					{['arcade', 'advanced', 'pro'].map((planType) => {
+					{Object.keys(bussinesPlan.plan).map((planType) => {
+						const typedPlanType =
+							planType as keyof typeof bussinesPlan.plan;
+
 						return (
 							<Controller
-								key={planType}
+								key={typedPlanType}
 								name="plan"
 								control={control}
 								render={({ field }) => {
@@ -31,23 +34,23 @@ const SecondStep: React.FC = () => {
 											inputClassName="plan"
 											$yearModality={!!modality}
 											className={
-												field.value === planType
+												field.value === typedPlanType
 													? 'selected'
 													: ''
 											}
 										>
 											<Input.Icon
-												source={`/images/icon-${planType}.svg`}
-												alt={`${planType} plan icon`}
+												source={`/images/icon-${typedPlanType}.svg`}
+												alt={`${typedPlanType} plan icon`}
 											/>
 
 											<div>
-												<Input.Label label={planType} />
+												<Input.Label label={typedPlanType} />
 												<Input.Description>
 													$
 													{
 														bussinesPlan.plan[
-															field.value
+															typedPlanType
 														][modality]
 													}
 													/{priceSufix}
@@ -57,12 +60,12 @@ const SecondStep: React.FC = () => {
 												</Input.Description>
 												<Input.InputElement
 													{...field}
-													value={planType}
+													value={typedPlanType}
 													checked={
-														field.value === planType
+														field.value === typedPlanType
 													}
 													onChange={() =>
-														field.onChange(planType)
+														field.onChange(typedPlanType)
 													}
 												/>
 											</div>
