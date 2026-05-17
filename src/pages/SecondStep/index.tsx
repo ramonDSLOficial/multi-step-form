@@ -36,7 +36,7 @@ const SecondStep: React.FC = () => {
 											className={
 												field.value === typedPlanType
 													? 'selected'
-													: ''
+													: undefined
 											}
 										>
 											<Input.Icon
@@ -91,7 +91,7 @@ const SecondStep: React.FC = () => {
 										<Input.Label
 											label="monthly"
 											className={
-												!field.value ? 'selected' : ''
+												!field.value ? 'selected' : undefined
 											}
 										/>
 
@@ -106,7 +106,7 @@ const SecondStep: React.FC = () => {
 
 										<Input.Label
 											label="yearly"
-											className={field.value ? 'selected' : ''}
+											className={field.value ? 'selected' : undefined}
 										/>
 									</Input.Root>
 								);

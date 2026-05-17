@@ -31,7 +31,7 @@ const FirstStep: React.FC = () => {
 								<Input.Label label="name" />
 								<Input.InputElement
 									{...field}
-									className={fieldState.invalid ? 'invalid' : ''}
+									className={fieldState.invalid ? 'invalid' : undefined}
 									placeholder="e.g. Stephen King"
 								/>
 								<Input.Error />
@@ -52,7 +52,7 @@ const FirstStep: React.FC = () => {
 								<Input.Label label="Email Address" />
 								<Input.InputElement
 									{...field}
-									className={fieldState.invalid ? 'invalid' : ''}
+									className={fieldState.invalid ? 'invalid' : undefined}
 									placeholder="e.g. stephenking@lorem.com"
 								/>
 								<Input.Error />
@@ -73,10 +73,8 @@ const FirstStep: React.FC = () => {
 								<Input.Label label="Phone Number" />
 								<Input.InputElement
 									{...field}
-									className={fieldState.invalid ? 'invalid' : ''}
+									className={fieldState.invalid ? 'invalid' : undefined}
 									value={phoneMask(field.value || "")}
-									// testar se pode tirar aqui VVV
-									onChange={e => field.onChange(e.target.value)}
 									placeholder="e.g. (99) 99999-9999"
 								/>
 								<Input.Error />

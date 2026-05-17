@@ -25,7 +25,7 @@ const ThirdStep: React.FC = () => {
 							<Input.Root
 								$type="checkbox"
 								inputClassName="aditions"
-								className={field.value ? 'selected' : ''}
+								className={field.value ? 'selected' : undefined}
 							>
 								<Input.InputElement
 									{...field}
@@ -60,7 +60,7 @@ const ThirdStep: React.FC = () => {
 							<Input.Root
 								$type="checkbox"
 								inputClassName="aditions"
-								className={field.value ? 'selected' : ''}
+								className={field.value ? 'selected' : undefined}
 							>
 								<Input.InputElement
 									{...field}
@@ -95,7 +95,7 @@ const ThirdStep: React.FC = () => {
 							<Input.Root
 								$type="checkbox"
 								inputClassName="aditions"
-								className={field.value ? 'selected' : ''}
+								className={field.value ? 'selected' : undefined}
 							>
 								<Input.InputElement
 									{...field}
