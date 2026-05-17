@@ -2,8 +2,11 @@ import React from 'react';
 
 import { Container } from './styles';
 import StepSummary from './StepSummary';
+import useChangeFormStep from '../../hook/useChangeFormStep';
 
 const Slidebar: React.FC = () => {
+  const { currentStep } = useChangeFormStep()
+
   return (
     <Container>
         <StepSummary 
@@ -21,6 +24,7 @@ const Slidebar: React.FC = () => {
         <StepSummary 
           stage={4}
           name='summary'
+          id={currentStep > 3 ? 'current' : undefined}
         />
     </Container>
   );
