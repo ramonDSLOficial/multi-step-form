@@ -6,10 +6,15 @@ import { Input } from '../../components/Input';
 import { Controller, useFormContext, useFormState } from 'react-hook-form';
 import type { FormProps } from '../../schemas/schemas.ts';
 import { phoneMask } from '../../utils/masks/phone.ts';
+import { useEffect } from 'react';
 
 const FirstStep: React.FC = () => {
-	const { control } = useFormContext<FormProps>();
+	const { control, setFocus } = useFormContext<FormProps>();
 	const { errors } = useFormState<FormProps>();
+
+	useEffect(() => {
+		setFocus('name')
+	}, [])
 
 	return (
 		<Container>
