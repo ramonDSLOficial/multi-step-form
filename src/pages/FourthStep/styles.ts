@@ -75,6 +75,7 @@ export const Term = styled.p`
 	color: ${(props) => props.theme.colors.neutral.first};
 	font-size: 1.2rem;
 	font-weight: ${(props) => props.theme.font.weight.secundary};
+	text-transform: capitalize;
     
 	${Clause}.plan & {
         color: ${(props) => props.theme.colors.primary.first};
@@ -95,12 +96,12 @@ export const Price = styled.p`
 	font-size: 1.2rem;
 	font-weight: ${(props) => props.theme.font.weight.secundary};
 
-	&.total,
+	${Clause}.total &,
 	${Clause}.plan & {
 		font-weight: ${(props) => props.theme.font.weight.primary};
 	}
 
-	&.total {
+	${Clause}.total & {
 		color: ${(props) => props.theme.colors.primary.second};
 		font-size: 1.4rem;
 	}
@@ -109,7 +110,7 @@ export const Price = styled.p`
         ${Clause}.plan & {
             font-size: 1.3rem;
         }
-		&.total {
+		${Clause}.total & {
 			font-size: 1.6rem;
 		}
 	}

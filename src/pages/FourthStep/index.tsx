@@ -14,8 +14,6 @@ import { useFormContext } from 'react-hook-form';
 import type { FormProps } from '../../schemas/schemas';
 import { bussinesPlan } from '../../store/store';
 
-// ! ir alterar o style
-
 const FourthStep: React.FC = () => {
 	const { watch } = useFormContext<FormProps>();
 	const fields = watch(['plan', 'onlineService', 'extraStorage', 'customProfile']);
@@ -81,9 +79,9 @@ const FourthStep: React.FC = () => {
 					)}
 				</section>
 
-				<Clause>
+				<Clause className="total">
 					<Term>Total &#40;per {!!modality ? 'year' : 'month'}&#41;</Term>
-					<Price className="total">+${contractTotalValue}/{priceSufix}</Price>
+					<Price>+${contractTotalValue}/{priceSufix}</Price>
 				</Clause>
 			</PlanDetails>
 		</Container>
