@@ -18,8 +18,8 @@ const Root: React.FunctionComponent<RootProps> = ({
 	children,
 }) => {
 	const inputId = useId();
-	// * mudar o nome desse isRadio
-	const isRadio = $type === 'radio' || inputClassName === 'aditions';
+	const hasFunctionOfLabel = $type === 'radio' || inputClassName === 'aditions';
+	
 	return (
 		<InputContext.Provider
 			value={{ inputId, $type, helperText, inputClassName }}
@@ -27,7 +27,7 @@ const Root: React.FunctionComponent<RootProps> = ({
 			<Container
 				className={`${inputClassName} ${className}`}
 				$type={$type}
-				as={isRadio ? 'label' : ''}
+				as={hasFunctionOfLabel ? 'label' : undefined}
 				htmlFor={inputId}
 				$yearModality={$yearModality}
 			>

@@ -42,11 +42,14 @@ const SecondStep: React.FC = () => {
 											<Input.Icon
 												source={`/images/icon-${typedPlanType}.svg`}
 												alt={`${typedPlanType} plan icon`}
+												aria-hidden="true"
 											/>
 
 											<div>
 												<Input.Label label={typedPlanType} />
-												<Input.Description>
+												<Input.Description
+													id={`${field.name}-price`}
+												>
 													$
 													{
 														bussinesPlan.plan[
@@ -55,7 +58,14 @@ const SecondStep: React.FC = () => {
 													}
 													/{priceSufix}
 												</Input.Description>
-												<Input.Description className="advantage">
+												<Input.Description
+													className="advantage"
+													id={
+														modality === 'yearly'
+															? `${field.name}-priceDiscount`
+															: undefined
+													}
+												>
 													2 months free
 												</Input.Description>
 												<Input.InputElement
@@ -67,6 +77,7 @@ const SecondStep: React.FC = () => {
 													onChange={() =>
 														field.onChange(typedPlanType)
 													}
+													aria-describedby={`${field.name}-price ${field.name}-priceDiscount`}
 												/>
 											</div>
 										</Input.Root>
@@ -106,7 +117,9 @@ const SecondStep: React.FC = () => {
 
 										<Input.Label
 											label="yearly"
-											className={field.value ? 'selected' : undefined}
+											className={
+												field.value ? 'selected' : undefined
+											}
 										/>
 									</Input.Root>
 								);

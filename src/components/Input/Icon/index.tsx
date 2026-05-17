@@ -8,15 +8,15 @@ interface IconProps {
 	alt?: string;
 }
 
-const Icon: React.FC<IconProps> = ({ source: Source, alt }) => {
+const Icon: React.FC<IconProps> = ({ source: Source, alt, ...props }) => {
 	const { $type } = useInputContext();
 
 	return (
 		<IconField $type={$type}>
 			{typeof Source === 'string' ? (
-				<img src={Source} alt={alt} />
+				<img src={Source} alt={alt} {...props} />
 			) : Source ? (
-				<Source />
+				<Source {...props} />
 			) : null}
 		</IconField>
 	);
