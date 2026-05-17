@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Container = styled.section`
@@ -23,3 +24,10 @@ export const Container = styled.section`
 		}
 	}
 `;
+
+export const RestartForm = styled(Link)`
+	color: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	text-decoration: none;
+`
