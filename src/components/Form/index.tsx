@@ -1,4 +1,4 @@
-import React, { type FormHTMLAttributes } from 'react';
+import React, { useEffect, type FormHTMLAttributes } from 'react';
 
 import { Container } from './styles';
 import FormFooter from '../FormFooter';
@@ -25,6 +25,12 @@ const Form: React.FC<FormHTMLAttributes<HTMLFormElement>> = () => {
 			customProfile: false,
 		},
 	});
+
+	useEffect(() => {
+		if (methods.formState.isSubmitSuccessful) {
+			methods.reset()
+		}
+	}, [methods.formState, methods.reset])
 	
 	return (
 		<FormProvider {...methods}>
