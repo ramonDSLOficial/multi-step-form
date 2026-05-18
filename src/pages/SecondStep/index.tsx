@@ -94,6 +94,7 @@ const SecondStep: React.FC = () => {
 							name="modality"
 							control={control}
 							render={({ field }) => {
+								
 								return (
 									<Input.Root
 										$type="checkbox"

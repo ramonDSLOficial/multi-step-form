@@ -4,8 +4,8 @@ import { Container } from './styles';
 
 export interface RootProps extends React.HTMLAttributes<HTMLDivElement> {
 	helperText?: string;
-	$type: InputType;
 	inputClassName?: string;
+	$type: InputType;
 	$yearModality?: boolean;
 }
 
@@ -18,7 +18,7 @@ const Root: React.FunctionComponent<RootProps> = ({
 	children,
 }) => {
 	const inputId = useId();
-	const hasFunctionOfLabel = $type === 'radio' || inputClassName === 'aditions';
+	const hasFunctionLabel = $type === 'radio' || inputClassName === 'aditions';
 	
 	return (
 		<InputContext.Provider
@@ -27,8 +27,8 @@ const Root: React.FunctionComponent<RootProps> = ({
 			<Container
 				className={`${inputClassName} ${className}`}
 				$type={$type}
-				as={hasFunctionOfLabel ? 'label' : undefined}
-				htmlFor={inputId}
+				as={hasFunctionLabel ? 'label' : undefined}
+				htmlFor={hasFunctionLabel? inputId : undefined}
 				$yearModality={$yearModality}
 			>
 				{children}
