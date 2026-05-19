@@ -31,6 +31,8 @@ const SecondStep: React.FC = () => {
 									return (
 										<Input.Root
 											$type="radio"
+											inputName={field.name}
+											inputValue={typedPlanType}
 											inputClassName="plan"
 											$yearModality={modality === 'yearly'}
 											className={
@@ -94,7 +96,6 @@ const SecondStep: React.FC = () => {
 							name="modality"
 							control={control}
 							render={({ field }) => {
-								
 								return (
 									<Input.Root
 										$type="checkbox"
