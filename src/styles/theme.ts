@@ -1,10 +1,5 @@
 import type { DefaultTheme } from "styled-components";
-
-// bold - 700; medium - 500; regular - 
-// mobile 480
-// tablet 481 - 769 
-// laptop 769 - 1024
-// desktop 1025 
+ 
 export const theme: DefaultTheme = {
     colors: {
         primary: {
