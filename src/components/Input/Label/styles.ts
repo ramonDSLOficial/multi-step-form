@@ -3,7 +3,7 @@ import type { CommonInputProps } from '../transientsProps';
 
 export const LabelElement = styled.label<CommonInputProps>`
 	${({ $type }) => {
-		if ($type === 'text' || $type === 'email') {
+		if ($type === 'text' || $type === 'email' || $type === 'tel') {
 			return css`
 				color: ${(props) => props.theme.colors.primary.first};
 				font-size: 1.2rem;

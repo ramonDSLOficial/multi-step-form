@@ -3,7 +3,7 @@ import type { CommonInputProps } from '../transientsProps';
 
 export const Container = styled.div<CommonInputProps>`
 	${({ $type, $yearModality }) => {
-		if ($type === 'text' || $type === 'email') {
+		if ($type === 'text' || $type === 'email' || $type === 'tel') {
 			return css`
 				display: grid;
 				grid-template-columns: minmax(100px, 1fr);

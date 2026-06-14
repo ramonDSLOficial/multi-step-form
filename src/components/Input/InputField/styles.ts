@@ -3,7 +3,8 @@ import type { CommonInputProps } from '../transientsProps';
 
 export const Input = styled.input<Omit<CommonInputProps, '$type'>>`
 	&[type='text'],
-	&[type='email'] {
+	&[type='email'],
+	&[type='tel'] {
 		color: ${(props) => props.theme.colors.primary.first};
 		font-size: 1.2rem;
 		font-weight: ${(props) => props.theme.font.weight.primary};

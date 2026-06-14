@@ -6,24 +6,28 @@ import { Input } from '../../components/Input';
 import { Controller, useFormContext, useFormState } from 'react-hook-form';
 import type { FormProps } from '../../schemas/schemas.ts';
 import { phoneMask } from '../../utils/masks/phone.ts';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 const FirstStep: React.FC = () => {
-	const { control, setFocus } = useFormContext<FormProps>();
+	const { control } = useFormContext<FormProps>();
 	const { errors } = useFormState<FormProps>();
 
+	const titleRef = useRef<HTMLHeadingElement>(null)
+
 	useEffect(() => {
-		setFocus('name')
-	}, [])
+	   titleRef.current?.focus()
+	}, []);
 
 	return (
 		<Container>
-			<Title>Personal info</Title>
+			<Title ref={titleRef} id="peronal-info-title" tabIndex={-1} >
+				Personal info
+			</Title>
 			<Paragraph>
 				Please provide your name, email address, and phone number.
 			</Paragraph>
 
-			<section>
+			<section aria-labelledby="peronal-info-title">
 				<Controller
 					name="name"
 					control={control}
@@ -33,15 +37,22 @@ const FirstStep: React.FC = () => {
 								$type="text"
 								helperText={errors.name?.message}
 							>
-								<Input.Label label="name" />
+								<Input.Label label="Name" />
 								<Input.InputElement
 									{...field}
-									className={fieldState.invalid ? 'invalid' : undefined}
+									className={
+										fieldState.invalid ? 'invalid' : undefined
+									}
 									placeholder="e.g. Stephen King"
-									aria-invalid={fieldState.invalid}
-									aria-describedby={`${field.name}-error`}
+									autoComplete="name"
+									aria-invalid={fieldState.invalid || undefined}
+									aria-describedby={
+										fieldState.invalid
+											? `${field.name}-error`
+											: undefined
+									}
 								/>
-								<Input.Error id={`${field.name}-error`}/>
+								<Input.Error id={`${field.name}-error`} />
 							</Input.Root>
 						);
 					}}
@@ -53,18 +64,26 @@ const FirstStep: React.FC = () => {
 					render={({ field, fieldState }) => {
 						return (
 							<Input.Root
-								$type="text"
+								$type="email"
 								helperText={errors.email?.message}
 							>
 								<Input.Label label="Email Address" />
 								<Input.InputElement
 									{...field}
-									className={fieldState.invalid ? 'invalid' : undefined}
+									className={
+										fieldState.invalid ? 'invalid' : undefined
+									}
 									placeholder="e.g. stephenking@lorem.com"
-									aria-invalid={fieldState.invalid}
-									aria-describedby={`${field.name}-error`}
+									inputMode="email"
+									autoComplete="email"
+									aria-invalid={fieldState.invalid || undefined}
+									aria-describedby={
+										fieldState.invalid
+											? `${field.name}-error`
+											: undefined
+									}
 								/>
-								<Input.Error id={`${field.name}-error`}/>
+								<Input.Error id={`${field.name}-error`} />
 							</Input.Root>
 						);
 					}}
@@ -76,19 +95,26 @@ const FirstStep: React.FC = () => {
 					render={({ field, fieldState }) => {
 						return (
 							<Input.Root
-								$type="text"
+								$type="tel"
 								helperText={errors.phone?.message}
 							>
 								<Input.Label label="Phone Number" />
 								<Input.InputElement
 									{...field}
-									className={fieldState.invalid ? 'invalid' : undefined}
-									value={phoneMask(field.value || "")}
+									className={
+										fieldState.invalid ? 'invalid' : undefined
+									}
+									value={phoneMask(field.value || '')}
 									placeholder="e.g. (99) 99999-9999"
-									aria-invalid={fieldState.invalid}
-									aria-describedby={`${field.name}-error`}
+									inputMode="numeric"
+									aria-invalid={fieldState.invalid || undefined}
+									aria-describedby={
+										fieldState.invalid
+											? `${field.name}-error`
+											: undefined
+									}
 								/>
-								<Input.Error id={`${field.name}-error`}/>
+								<Input.Error id={`${field.name}-error`} />
 							</Input.Root>
 						);
 					}}
