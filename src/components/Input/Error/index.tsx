@@ -3,7 +3,7 @@ import { useInputContext } from '../InputContext';
 
 import { ErrorElement } from './styles';
 
-const Error: React.FC<HTMLAttributes<HTMLParagraphElement>> = ({ className }) => {
+const Error: React.FC<HTMLAttributes<HTMLSpanElement>> = ({ className }) => {
 	const { $type, helperText, inputClassName } = useInputContext();
 
 	return (

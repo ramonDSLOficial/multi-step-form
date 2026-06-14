@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 import type { CommonInputProps } from '../transientsProps';
 
-interface StyledErrorElementProps extends CommonInputProps {}
-
-export const ErrorElement = styled.p<StyledErrorElementProps>`
+export const ErrorElement = styled.span<CommonInputProps>`
 	color: ${(props) => props.theme.colors.primary.fifth};
 	font-size: 1rem;
 	font-weight: ${(props) => props.theme.font.weight.primary};
