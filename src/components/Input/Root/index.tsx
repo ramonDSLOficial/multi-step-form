@@ -22,6 +22,7 @@ const Root: React.FunctionComponent<RootProps> = ({
 	inputName,
 	inputValue,
 	children,
+	...props
 }) => {
 	const { setValue } = useFormContext<FormProps>();
 	const inputId = useId();
@@ -53,6 +54,7 @@ const Root: React.FunctionComponent<RootProps> = ({
 				$type={$type}
 				$yearModality={$yearModality}
 				{...labelProps}
+				{...props}
 			>
 				{children}
 			</Container>

@@ -6,21 +6,33 @@ import { Controller, useFormContext } from 'react-hook-form';
 import type { FormProps } from '../../schemas/schemas';
 import useModality from '../../hook/useModality';
 import { bussinesPlan } from '../../store/store';
+import { useRef } from 'react';
 
 const SecondStep: React.FC = () => {
 	const { control } = useFormContext<FormProps>();
 	const { modality, priceSufix } = useModality();
 
+	const titleRef = useRef<HTMLHeadingElement>(null);
+
 	return (
 		<Container>
-			<Title>Select your plan</Title>
+			<Title ref={titleRef} id="plan-title" tabIndex={-1}>
+				Select your plan
+			</Title>
 			<Paragraph>You have the option of monthly or yearly billing.</Paragraph>
 
 			<FormContanier>
-				<section>
+				<section aria-labelledby="plan-title" role="group">
 					{Object.keys(bussinesPlan.plan).map((planType) => {
 						const typedPlanType =
 							planType as keyof typeof bussinesPlan.plan;
+
+						const priceId = `plan-${typedPlanType}-price`;
+						const discountId = `plan-${typedPlanType}-priceDiscount`;
+						const isYearly = modality === 'yearly';
+						const ariaDescribedbyId = isYearly
+							? `${priceId} ${discountId}`
+							: priceId;
 
 						return (
 							<Controller
@@ -28,30 +40,27 @@ const SecondStep: React.FC = () => {
 								name="plan"
 								control={control}
 								render={({ field }) => {
+									const isSelected = field.value === typedPlanType;
+
 									return (
 										<Input.Root
 											$type="radio"
 											inputName={field.name}
 											inputValue={typedPlanType}
 											inputClassName="plan"
-											$yearModality={modality === 'yearly'}
+											$yearModality={isYearly}
 											className={
-												field.value === typedPlanType
-													? 'selected'
-													: undefined
+												isSelected ? 'selected' : undefined
 											}
 										>
 											<Input.Icon
 												source={`/images/icon-${typedPlanType}.svg`}
-												alt={`${typedPlanType} plan icon`}
 												aria-hidden="true"
 											/>
 
 											<div>
 												<Input.Label label={typedPlanType} />
-												<Input.Description
-													id={`${field.name}-price`}
-												>
+												<Input.Description id={priceId}>
 													$
 													{
 														bussinesPlan.plan[
@@ -61,25 +70,28 @@ const SecondStep: React.FC = () => {
 													/{priceSufix}
 												</Input.Description>
 												<Input.Description
-													className="advantage"
-													id={
-														modality === 'yearly'
-															? `${field.name}-priceDiscount`
+													className={`advantage ${
+														isYearly
+															? 'hidden'
 															: undefined
+													}`}
+													aria-hidden={
+														!isYearly ? true : undefined
 													}
+													id={discountId}
 												>
 													2 months free
 												</Input.Description>
 												<Input.InputElement
 													{...field}
 													value={typedPlanType}
-													checked={
-														field.value === typedPlanType
-													}
+													checked={isSelected}
 													onChange={() =>
 														field.onChange(typedPlanType)
 													}
-													aria-describedby={`${field.name}-price ${field.name}-priceDiscount`}
+													aria-describedby={
+														ariaDescribedbyId
+													}
 												/>
 											</div>
 										</Input.Root>
@@ -90,44 +102,44 @@ const SecondStep: React.FC = () => {
 					})}
 				</section>
 
-				<section>
-					{
-						<Controller
-							name="modality"
-							control={control}
-							render={({ field }) => {
-								return (
-									<Input.Root
-										$type="checkbox"
-										inputClassName="toggle"
-									>
-										<Input.Label
-											label="monthly"
-											className={
-												!field.value ? 'selected' : undefined
-											}
-										/>
+				<section aria-label="Billing Period">
+					<Controller
+						name="modality"
+						control={control}
+						render={({ field }) => {
+							const isYearly = !!field.value;
 
-										<Input.InputElement
-											{...field}
-											value={undefined}
-											checked={field.value}
-											onChange={(e) =>
-												field.onChange(e.target.checked)
-											}
-										/>
+							return (
+								<Input.Root $type="checkbox" inputClassName="toggle">
+									<Input.Label
+										label="monthly"
+										aria-hidden="true"
+										className={
+											!isYearly ? 'selected' : undefined
+										}
+									/>
 
-										<Input.Label
-											label="yearly"
-											className={
-												field.value ? 'selected' : undefined
-											}
-										/>
-									</Input.Root>
-								);
-							}}
-						/>
-					}
+									<Input.InputElement
+										{...field}
+										value={undefined}
+										checked={isYearly}
+										onChange={(e) =>
+											field.onChange(e.target.checked)
+										}
+										role="switch"
+										aria-checked={isYearly}
+										aria-label="Billing yearly"
+									/>
+
+									<Input.Label
+										label="yearly"
+										aria-hidden="true"
+										className={isYearly ? 'selected' : undefined}
+									/>
+								</Input.Root>
+							);
+						}}
+					/>
 				</section>
 			</FormContanier>
 		</Container>

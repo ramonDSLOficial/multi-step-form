@@ -3,13 +3,11 @@ import React, { type HTMLAttributes } from 'react';
 import { Container } from './styles';
 import { useInputContext } from '../InputContext';
 
-interface DescriptionProps extends HTMLAttributes<HTMLParagraphElement> {}
-
-const Description: React.FC<DescriptionProps> = ({ children, className }) => {
+const Description: React.FC<HTMLAttributes<HTMLParagraphElement>> = ({ children, className, id }) => {
   const { $type, inputClassName } = useInputContext()
   
   return (
-    <Container $type={$type} className={`${inputClassName} ${className}`}>
+    <Container $type={$type} className={`${inputClassName} ${className}`} id={id}>
         {children}
     </Container>
   );
