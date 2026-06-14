@@ -12,15 +12,15 @@ const FirstStep: React.FC = () => {
 	const { control } = useFormContext<FormProps>();
 	const { errors } = useFormState<FormProps>();
 
-	const titleRef = useRef<HTMLHeadingElement>(null)
+	const titleRef = useRef<HTMLHeadingElement>(null);
 
 	useEffect(() => {
-	   titleRef.current?.focus()
+		titleRef.current?.focus();
 	}, []);
 
 	return (
 		<Container>
-			<Title ref={titleRef} id="peronal-info-title" tabIndex={-1} >
+			<Title ref={titleRef} id="peronal-info-title" tabIndex={-1}>
 				Personal info
 			</Title>
 			<Paragraph>
@@ -52,7 +52,12 @@ const FirstStep: React.FC = () => {
 											: undefined
 									}
 								/>
-								<Input.Error id={`${field.name}-error`} />
+								<Input.Error
+									role="alert"
+									aria-live="assertive"
+									aria-atomic="true"
+									id={`${field.name}-error`}
+								/>
 							</Input.Root>
 						);
 					}}
@@ -83,7 +88,12 @@ const FirstStep: React.FC = () => {
 											: undefined
 									}
 								/>
-								<Input.Error id={`${field.name}-error`} />
+								<Input.Error
+									role="alert"
+									aria-live="assertive"
+									aria-atomic="true"
+									id={`${field.name}-error`}
+								/>
 							</Input.Root>
 						);
 					}}
@@ -114,7 +124,12 @@ const FirstStep: React.FC = () => {
 											: undefined
 									}
 								/>
-								<Input.Error id={`${field.name}-error`} />
+								<Input.Error
+									role="alert"
+									aria-live="assertive"
+									aria-atomic="true"
+									id={`${field.name}-error`}
+								/>
 							</Input.Root>
 						);
 					}}
