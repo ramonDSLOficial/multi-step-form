@@ -1,14 +1,21 @@
-import React, { type HTMLAttributes } from 'react';
+import React, { forwardRef } from 'react';
 
 import { Container } from './styles';
 
-
-const Title: React.FC<HTMLAttributes<HTMLHeadElement>> = ({ children }) => {
-  return (
-    <Container>
-        { children }
-    </Container>
-  );
+interface TitleProps {
+	children: React.ReactNode;
+	id?: string;
+	tabIndex?: number;
 }
+
+const Title = forwardRef<HTMLHeadingElement, TitleProps>(
+	({ children, id, tabIndex }, ref) => {
+		return (
+			<Container id={id} ref={ref} tabIndex={tabIndex}>
+				{children}
+			</Container>
+		);
+	}
+);
 
 export default Title;
