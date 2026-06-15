@@ -24,7 +24,7 @@ const SecondStep: React.FC = () => {
 			<Paragraph id={paragraphId}>You have the option of monthly or yearly billing.</Paragraph>
 
 			<FormContanier>
-				<section aria-labelledby={`${titleId} ${paragraphId}`} role="group">
+				<section aria-labelledby={titleId} aria-describedby={paragraphId} role="group">
 					{Object.keys(bussinesPlan.plan).map((planType) => {
 						const typedPlanType =
 							planType as keyof typeof bussinesPlan.plan;

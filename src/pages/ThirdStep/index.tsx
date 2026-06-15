@@ -24,7 +24,7 @@ const ThirdStep: React.FC = () => {
 				Add-ons help enhance your gaming experience.
 			</Paragraph>
 
-			<section aria-labelledby={`${titleId} ${paragraphId}`} role="group">
+			<section aria-labelledby={titleId} aria-describedby={paragraphId} role="group">
 				<Controller
 					name="onlineService"
 					control={control}

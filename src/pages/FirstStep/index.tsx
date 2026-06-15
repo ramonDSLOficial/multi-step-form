@@ -29,7 +29,7 @@ const FirstStep: React.FC = () => {
 				Please provide your name, email address, and phone number.
 			</Paragraph>
 
-			<section aria-labelledby={`${titleId} ${paragraphId}`}>
+			<section aria-labelledby={titleId} aria-describedby={paragraphId}>
 				<Controller
 					name="name"
 					control={control}

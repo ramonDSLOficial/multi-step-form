@@ -13,6 +13,7 @@ import useModality from '../../hook/useModality';
 import { useFormContext } from 'react-hook-form';
 import type { FormProps } from '../../schemas/schemas';
 import { bussinesPlan } from '../../store/store';
+import { useId, useRef } from 'react';
 
 const FourthStep: React.FC = () => {
 	const { watch } = useFormContext<FormProps>();
@@ -26,6 +27,10 @@ const FourthStep: React.FC = () => {
 		fields[3] ? bussinesPlan.customProfile[modality] : 0,
 	];
 	const contractTotalValue = contractValues.reduce((prev, acc) => acc + prev)
+
+	const titleRef = useRef<HTMLHeadingElement>(null);
+	const titleId = useId()
+	const paragraphId = useId()
 
 	return (
 		<Container>
