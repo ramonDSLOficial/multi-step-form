@@ -6,13 +6,15 @@ import { Input } from '../../components/Input';
 import { Controller, useFormContext, useFormState } from 'react-hook-form';
 import type { FormProps } from '../../schemas/schemas.ts';
 import { phoneMask } from '../../utils/masks/phone.ts';
-import { useEffect, useRef } from 'react';
+import { useEffect, useId, useRef } from 'react';
 
 const FirstStep: React.FC = () => {
 	const { control } = useFormContext<FormProps>();
 	const { errors } = useFormState<FormProps>();
 
 	const titleRef = useRef<HTMLHeadingElement>(null);
+	const titleId = useId()
+	const paragraphId = useId()
 
 	useEffect(() => {
 		titleRef.current?.focus();
@@ -20,14 +22,14 @@ const FirstStep: React.FC = () => {
 
 	return (
 		<Container>
-			<Title ref={titleRef} id="peronal-info-title" tabIndex={-1}>
+			<Title ref={titleRef} id={titleId} tabIndex={-1}>
 				Personal info
 			</Title>
-			<Paragraph>
+			<Paragraph id={paragraphId}>
 				Please provide your name, email address, and phone number.
 			</Paragraph>
 
-			<section aria-labelledby="peronal-info-title">
+			<section aria-labelledby={`${titleId} ${paragraphId}`}>
 				<Controller
 					name="name"
 					control={control}

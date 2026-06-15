@@ -6,23 +6,25 @@ import { Controller, useFormContext } from 'react-hook-form';
 import type { FormProps } from '../../schemas/schemas';
 import useModality from '../../hook/useModality';
 import { bussinesPlan } from '../../store/store';
-import { useRef } from 'react';
+import { useId, useRef } from 'react';
 
 const SecondStep: React.FC = () => {
 	const { control } = useFormContext<FormProps>();
 	const { modality, priceSufix } = useModality();
 
 	const titleRef = useRef<HTMLHeadingElement>(null);
+	const titleId = useId()
+	const paragraphId = useId()
 
 	return (
 		<Container>
-			<Title ref={titleRef} id="plan-title" tabIndex={-1}>
+			<Title ref={titleRef} id={titleId} tabIndex={-1}>
 				Select your plan
 			</Title>
-			<Paragraph>You have the option of monthly or yearly billing.</Paragraph>
+			<Paragraph id={paragraphId}>You have the option of monthly or yearly billing.</Paragraph>
 
 			<FormContanier>
-				<section aria-labelledby="plan-title" role="group">
+				<section aria-labelledby={`${titleId} ${paragraphId}`} role="group">
 					{Object.keys(bussinesPlan.plan).map((planType) => {
 						const typedPlanType =
 							planType as keyof typeof bussinesPlan.plan;
