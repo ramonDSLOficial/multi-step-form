@@ -6,17 +6,25 @@ import useModality from '../../hook/useModality';
 import { Controller, useFormContext } from 'react-hook-form';
 import type { FormProps } from '../../schemas/schemas';
 import { bussinesPlan } from '../../store/store';
+import { useId, useRef } from 'react';
 
 const ThirdStep: React.FC = () => {
 	const { control } = useFormContext<FormProps>();
 	const { modality, priceSufix } = useModality();
+	const titleRef = useRef<HTMLHeadingElement>(null);
+	const titleId = useId();
+	const paragraphId = useId();
 
 	return (
 		<Container>
-			<Title>Pick add-ons</Title>
-			<Paragraph>Add-ons help enhance your gaming experience.</Paragraph>
+			<Title ref={titleRef} id={titleId}>
+				Pick add-ons
+			</Title>
+			<Paragraph id={paragraphId}>
+				Add-ons help enhance your gaming experience.
+			</Paragraph>
 
-			<section>
+			<section aria-labelledby={`${titleId} ${paragraphId}`} role="group">
 				<Controller
 					name="onlineService"
 					control={control}
@@ -34,13 +42,13 @@ const ThirdStep: React.FC = () => {
 									onChange={(e) =>
 										field.onChange(e.target.checked)
 									}
-									aria-describedby={`${field.name}-service ${field.name}-desc ${field.name}-price`}
+									aria-describedby={`${field.name}-label ${field.name}-desc ${field.name}-price`}
 								/>
 
 								<div>
 									<Input.Label
 										label="Online service"
-										id={`${field.name}-service`}
+										id={`${field.name}-label`}
 									/>
 									<Input.Description
 										className="additionDesc"
@@ -79,12 +87,18 @@ const ThirdStep: React.FC = () => {
 									onChange={(e) =>
 										field.onChange(e.target.checked)
 									}
-									aria-describedby={`${field.name}-price`}
+									aria-describedby={`${field.name}-label ${field.name}-desc ${field.name}-price`}
 								/>
 
 								<div>
-									<Input.Label label="Larger storage" />
-									<Input.Description className="additionDesc">
+									<Input.Label
+										id={`${field.name}-label`}
+										label="Larger storage"
+									/>
+									<Input.Description
+										id={`${field.name}-desc`}
+										className="additionDesc"
+									>
 										Extra 1TB of cloud save
 									</Input.Description>
 								</div>
@@ -118,12 +132,18 @@ const ThirdStep: React.FC = () => {
 									onChange={(e) =>
 										field.onChange(e.target.checked)
 									}
-									aria-describedby={`${field.name}-price`}
+									aria-describedby={`${field.name}-label ${field.name}-desc ${field.name}-price`}
 								/>
 
 								<div>
-									<Input.Label label="Customizable Profile" />
-									<Input.Description className="additionDesc">
+									<Input.Label
+										id={`${field.name}-label`}
+										label="Customizable Profile"
+									/>
+									<Input.Description
+										id={`${field.name}-desc`}
+										className="additionDesc"
+									>
 										Custom theme on your profile
 									</Input.Description>
 								</div>
