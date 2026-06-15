@@ -34,17 +34,26 @@ const ThirdStep: React.FC = () => {
 									onChange={(e) =>
 										field.onChange(e.target.checked)
 									}
-									aria-describedby={`${field.name}-price`}
+									aria-describedby={`${field.name}-service ${field.name}-desc ${field.name}-price`}
 								/>
 
 								<div>
-									<Input.Label label="Online service" />
-									<Input.Description className="additionDesc">
+									<Input.Label
+										label="Online service"
+										id={`${field.name}-service`}
+									/>
+									<Input.Description
+										className="additionDesc"
+										id={`${field.name}-desc`}
+									>
 										Access to multiplayer games
 									</Input.Description>
 								</div>
 
-								<Input.Description className="price" id={`${field.name}-price`}>
+								<Input.Description
+									className="price"
+									id={`${field.name}-price`}
+								>
 									+${bussinesPlan.onlineService[modality]}/
 									{priceSufix}
 								</Input.Description>
@@ -80,7 +89,10 @@ const ThirdStep: React.FC = () => {
 									</Input.Description>
 								</div>
 
-								<Input.Description className="price" id={`${field.name}-price`}>
+								<Input.Description
+									className="price"
+									id={`${field.name}-price`}
+								>
 									+${bussinesPlan.extraStorage[modality]}/
 									{priceSufix}
 								</Input.Description>
@@ -116,7 +128,10 @@ const ThirdStep: React.FC = () => {
 									</Input.Description>
 								</div>
 
-								<Input.Description className="price" id={`${field.name}-price`}>
+								<Input.Description
+									className="price"
+									id={`${field.name}-price`}
+								>
 									+${bussinesPlan.customProfile[modality]}/
 									{priceSufix}
 								</Input.Description>
