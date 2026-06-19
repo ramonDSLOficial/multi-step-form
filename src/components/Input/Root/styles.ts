@@ -39,6 +39,21 @@ export const Container = styled.div<CommonInputProps>`
 					display: flex;
 					flex-direction: column;
 					gap: 3px;
+
+					& > strong {
+						color: ${(props) => props.theme.colors.primary.first};
+						font-size: 1.2rem;
+						font-weight: ${(props) => props.theme.font.weight.primary};
+						text-shadow: 1px 1px 1px #022a5a2c;
+						letter-spacing: 0.2px;
+						text-transform: capitalize;
+
+						@media screen and (min-width: 769px) {
+							.plan:hover & {
+								cursor: pointer;
+							}
+						}
+					}
 				}
 
 				@media screen and (min-width: 769px) {
@@ -79,7 +94,8 @@ export const Container = styled.div<CommonInputProps>`
 					border: 1.5px solid
 						${(props) => props.theme.colors.neutral.second};
 					border-radius: 5px;
-					transition: border-color .5s ease-in-out, background-color .5s ease-in-out;
+					transition: border-color 0.5s ease-in-out,
+						background-color 0.5s ease-in-out;
 
 					& > div {
 						display: flex;

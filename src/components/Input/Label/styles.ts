@@ -14,21 +14,6 @@ export const LabelElement = styled.label<CommonInputProps>`
 					grid-area: label;
 				}
 			`;
-		} else if ($type === 'radio') {
-			return css`
-				color: ${(props) => props.theme.colors.primary.first};
-				font-size: 1.2rem;
-				font-weight: ${(props) => props.theme.font.weight.primary};
-				text-shadow: 1px 1px 1px #022a5a2c;
-				letter-spacing: 0.2px;
-				text-transform: capitalize;
-
-				@media screen and (min-width: 769px) {
-					.plan:hover & {
-						cursor: pointer;
-					}
-				}
-			`;
 		} else if ($type === 'checkbox') {
 			return css`
 				.toggle & {

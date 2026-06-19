@@ -13,18 +13,24 @@ const SecondStep: React.FC = () => {
 	const { modality, priceSufix } = useModality();
 
 	const titleRef = useRef<HTMLHeadingElement>(null);
-	const titleId = useId()
-	const paragraphId = useId()
+	const titleId = useId();
+	const paragraphId = useId();
 
 	return (
 		<Container>
 			<Title ref={titleRef} id={titleId} tabIndex={-1}>
 				Select your plan
 			</Title>
-			<Paragraph id={paragraphId}>You have the option of monthly or yearly billing.</Paragraph>
+			<Paragraph id={paragraphId}>
+				You have the option of monthly or yearly billing.
+			</Paragraph>
 
 			<FormContanier>
-				<section aria-labelledby={titleId} aria-describedby={paragraphId} role="group">
+				<section
+					aria-labelledby={titleId}
+					aria-describedby={paragraphId}
+					role="group"
+				>
 					{Object.keys(bussinesPlan.plan).map((planType) => {
 						const typedPlanType =
 							planType as keyof typeof bussinesPlan.plan;
@@ -57,11 +63,10 @@ const SecondStep: React.FC = () => {
 										>
 											<Input.Icon
 												source={`/images/icon-${typedPlanType}.svg`}
-												aria-hidden="true"
 											/>
 
 											<div>
-												<Input.Label label={typedPlanType} />
+												<strong>{typedPlanType}</strong>
 												<Input.Description id={priceId}>
 													$
 													{
@@ -71,6 +76,7 @@ const SecondStep: React.FC = () => {
 													}
 													/{priceSufix}
 												</Input.Description>
+
 												<Input.Description
 													className={`advantage ${
 														isYearly
@@ -84,6 +90,7 @@ const SecondStep: React.FC = () => {
 												>
 													2 months free
 												</Input.Description>
+												
 												<Input.InputElement
 													{...field}
 													value={typedPlanType}

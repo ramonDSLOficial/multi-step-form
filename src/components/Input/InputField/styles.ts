@@ -41,7 +41,15 @@ export const Input = styled.input<Omit<CommonInputProps, '$type'>>`
 	}
 
 	&[type='radio'] {
-		display: none;
+		position: absolute;
+		width: 10px;
+		height: 10px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border-width: 0;
 	}
 
 	&[type='checkbox'] {
