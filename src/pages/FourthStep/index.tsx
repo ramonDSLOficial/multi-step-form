@@ -34,19 +34,19 @@ const FourthStep: React.FC = () => {
 
 	return (
 		<Container>
-			<Title>Finishing up</Title>
-			<Paragraph>
+			<Title id={titleId} ref={titleRef}>Finishing up</Title>
+			<Paragraph id={paragraphId}>
 				Double-check everything looks OK before confirming.
 			</Paragraph>
 
-			<PlanDetails>
+			<PlanDetails aria-labelledby={titleId} aria-describedby={paragraphId} role="group">
 				<section>
 					<Clause className="plan">
 						<div>
 							<Term>
 								{fields[0]} &#40;{modality}&#41;
 							</Term>
-							<ChangePlanbtn role='link' to={PATHS.steps.second}>
+							<ChangePlanbtn aria-label={`Change plan`} to={PATHS.steps.second}>
 								Change
 							</ChangePlanbtn>
 						</div>
@@ -84,9 +84,9 @@ const FourthStep: React.FC = () => {
 					)}
 				</section>
 
-				<Clause className="total">
-					<Term>Total &#40;per {modality === 'yearly' ? 'year' : 'month'}&#41;</Term>
-					<Price>+${contractTotalValue}/{priceSufix}</Price>
+				<Clause role='status' className="total">
+					<Term aria-live='polite'>Total &#40;per {modality === 'yearly' ? 'year' : 'month'}&#41;</Term>
+					<Price aria-live='polite'>+${contractTotalValue}/{priceSufix}</Price>
 				</Clause>
 			</PlanDetails>
 		</Container>
