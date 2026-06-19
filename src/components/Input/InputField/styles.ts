@@ -78,6 +78,10 @@ export const Input = styled.input<Omit<CommonInputProps, '$type'>>`
 			&:checked::after {
 				left: 58.5%;
 			}
+
+			&:hover {
+				cursor: pointer;
+			}
 		}
 
 		&.aditions {

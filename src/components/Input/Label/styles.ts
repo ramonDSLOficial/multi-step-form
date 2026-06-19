@@ -21,8 +21,13 @@ export const LabelElement = styled.label<CommonInputProps>`
 					font-size: 1.2rem;
 					font-weight: ${(props) => props.theme.font.weight.primary};
 					text-transform: capitalize;
-					transition: color .5s ease-in-out;
+					transition: color .5s ease-in-out, filter .5s ease-in-out;
 
+					&:hover {
+						cursor: pointer;
+						filter: brightness(.6);
+					}
+					
 					&.selected {
 						color: ${(props) => props.theme.colors.primary.first};
 					}
