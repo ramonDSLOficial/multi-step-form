@@ -20,11 +20,11 @@ export const Clause = styled.div`
 export const PlanDetails = styled.section`
 	margin-top: 15px;
 
-	& > section,
+	& > dl,
 	& > ${Clause} {
 		padding: 15px 10px;
 	}
-	& > section {
+	& > dl {
 		display: flex;
 		flex-direction: column;
 		gap: 15px;
@@ -42,12 +42,12 @@ export const PlanDetails = styled.section`
 	}
 
 	@media screen and (min-width: 769px) {
-		& > section,
+		& > dl,
 		& > ${Clause} {
 			padding: 20px;
 		}
 
-		& > section {
+		& > dl {
 			& > ${Clause}:first-child {
 				padding-bottom: 20px;
 			}
@@ -58,7 +58,7 @@ export const PlanDetails = styled.section`
 export const ChangePlanbtn = styled(Link)`
 	color: ${(props) => props.theme.colors.neutral.first};
 	font-size: 1.2rem;
-	font-weight: ${(props) => props.theme.font.weight.secundary};
+	font-weight: ${(props) => props.theme.font.weight.primary};
 	text-decoration-color: ${(props) => props.theme.font.weight.secundary};
     
     @media screen and (min-width: 769px) {
@@ -71,7 +71,7 @@ export const ChangePlanbtn = styled(Link)`
     }
 `;
 
-export const Term = styled.p`
+export const Term = styled.dt`
 	color: ${(props) => props.theme.colors.neutral.first};
 	font-size: 1.2rem;
 	font-weight: ${(props) => props.theme.font.weight.secundary};
@@ -91,7 +91,7 @@ export const Term = styled.p`
 	}
 `;
 
-export const Price = styled.p`
+export const Price = styled.dd`
 	color: ${(props) => props.theme.colors.neutral.black};
 	font-size: 1.2rem;
 	font-weight: ${(props) => props.theme.font.weight.secundary};

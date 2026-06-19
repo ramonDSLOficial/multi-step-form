@@ -40,7 +40,7 @@ const FourthStep: React.FC = () => {
 			</Paragraph>
 
 			<PlanDetails aria-labelledby={titleId} aria-describedby={paragraphId} role="group">
-				<section>
+				<dl>
 					<Clause className="plan">
 						<div>
 							<Term>
@@ -82,10 +82,10 @@ const FourthStep: React.FC = () => {
 							</Price>
 						</Clause>
 					)}
-				</section>
+				</dl>
 
 				<Clause role='status' className="total">
-					<Term aria-live='polite'>Total &#40;per {modality === 'yearly' ? 'year' : 'month'}&#41;</Term>
+					<Term aria-live='polite' aria-atomic>Total &#40;per {modality === 'yearly' ? 'year' : 'month'}&#41;</Term>
 					<Price aria-live='polite'>+${contractTotalValue}/{priceSufix}</Price>
 				</Clause>
 			</PlanDetails>
