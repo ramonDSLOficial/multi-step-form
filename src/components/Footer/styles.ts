@@ -7,11 +7,12 @@ export const Container = styled.footer`
     & > p {
         color: ${props => props.theme.colors.neutral.first};
         font-size: 1rem;
-        font-weight: ${props => props.theme.font.weight.terciary};
-
-
+        font-weight: ${props => props.theme.font.weight.secundary};
+        
+        
         & > a {
             color: ${props => props.theme.colors.primary.second};
+            font-weight: ${props => props.theme.font.weight.primary};
         }
     }
 
