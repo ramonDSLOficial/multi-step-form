@@ -62,7 +62,7 @@ export const Input = styled.input<Omit<CommonInputProps, '$type'>>`
 			background-color: ${(props) => props.theme.colors.primary.first};
 			border-radius: 8px;
 			outline: 2px solid transparent;
-			transition: outline .5s ease-in-out;
+			transition: outline 0.5s ease-in-out;
 
 			&::after {
 				display: block;
@@ -96,7 +96,12 @@ export const Input = styled.input<Omit<CommonInputProps, '$type'>>`
 			height: 18px;
 			border: 1px solid ${(props) => props.theme.colors.neutral.second};
 			border-radius: 3px;
+			outline: 1px solid transparent;
 			transition: all 0.3s ease-in-out;
+
+			&:focus {
+				outline-color: ${(props) => props.theme.colors.primary.second};
+			}
 
 			&:checked {
 				border-color: ${(props) => props.theme.colors.primary.second};
