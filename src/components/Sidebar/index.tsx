@@ -8,7 +8,7 @@ const Slidebar: React.FC = () => {
   const { currentStep } = useChangeFormStep()
 
   return (
-    <Container>
+    <Container role='list'>
         <StepSummary 
           stage={1}
           name='your info'
