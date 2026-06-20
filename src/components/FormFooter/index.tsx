@@ -52,13 +52,13 @@ const FormFooter: React.FC<React.HTMLAttributes<HTMLHtmlElement>> = () => {
 
 	return (
 		currentStep <= lastFormStepIndex && (
-			<Container>
+			<Container role='group' aria-label='Form buttons field'>
 				{currentStep > 0 && currentStep <= lastFormStepIndex && (
 					<Button
 						label="go back"
 						variant="prev"
 						handleClick={goPrev}
-						title="voltar a etapa anterior"
+						title="Back Step"
 					/>
 				)}
 				{currentStep < lastFormStepIndex ? (
@@ -66,7 +66,7 @@ const FormFooter: React.FC<React.HTMLAttributes<HTMLHtmlElement>> = () => {
 						label="next step"
 						variant="next"
 						handleClick={goNext}
-						title="ir para próxima etapa"
+						title="Next Step"
 					/>
 				) : currentStep === lastFormStepIndex ? (
 					<Button
@@ -74,7 +74,6 @@ const FormFooter: React.FC<React.HTMLAttributes<HTMLHtmlElement>> = () => {
 						type="submit"
 						variant="send"
 						handleClick={handleSubmit(submitForm)}
-						title="enviar formulário"
 					/>
 				) : null}
 			</Container>

@@ -8,12 +8,13 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>{
   handleClick?: (e: React.MouseEvent) => void
 }
 
-const Button: React.FC<ButtonProps> = ({ label, type='button', variant, handleClick}) => {
+const Button: React.FC<ButtonProps> = ({ label, type='button', variant, handleClick, ...props}) => {
   return (
     <Container
       data-variant={variant}
       type={type}
       onClick={handleClick}
+      {...props}
       >
       {label}
     </Container>
