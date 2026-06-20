@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
-export const Container = styled.section`
+export const Container = styled.ol`
 	display: flex;
 	justify-content: center;
 	padding-top: 8%;
 	gap: 15px;
+	list-style: none;
 	background: ${(props) => props.theme.colors.neutral.first}
 		url('/images/bg-sidebar-mobile.svg') top no-repeat;
 	aspect-ratio: 3.5 / 1.5;
