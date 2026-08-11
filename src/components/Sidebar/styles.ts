@@ -15,11 +15,12 @@ export const Container = styled.ol`
 	@media screen and (min-width: 769px) {
 		flex-direction: column;
 		justify-content: flex-start;
-		padding-top: 5%;
-		padding-left: 20px;
+		padding-top: 6.5%;
+		padding-left: 25px;
 		gap: 30px;
 		background-image: url('/images/bg-sidebar-desktop.svg');
-		aspect-ratio: 9.75 / 19.95;
+		aspect-ratio: 9.75 / 22.5;
+		aspect-ratio: 9.75 / 19;
 		width: 65%;
 		border-radius: 10px;
 	}

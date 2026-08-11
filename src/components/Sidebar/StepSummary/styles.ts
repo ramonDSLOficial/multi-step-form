@@ -23,6 +23,10 @@ export const Container = styled.li`
 		display: flex;
 		align-items: center;
 		gap: 14px;
+
+		& > div > p {
+			font-size: 1.2rem;
+		}
 	}
 `;
 
@@ -41,6 +45,11 @@ export const Stage = styled.p`
 		border: 1px solid ${(props) => props.theme.colors.primary.third};
 		background-color: ${(props) => props.theme.colors.primary.fourth};
 	}
+
+	@media screen and (min-width: 769px) {
+		font-size: 1.4rem;
+		padding: 5.6px 11px;
+	}
 `;
 
 export const Name = styled.h3`
@@ -49,4 +58,8 @@ export const Name = styled.h3`
 	font-weight: ${(props) => props.theme.font.weight.primary};
 	text-transform: uppercase;
 	letter-spacing: 1px;
+
+	@media screen and (min-width: 769px) {
+		font-size: 1.3rem;
+	}
 `;

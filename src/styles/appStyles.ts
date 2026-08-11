@@ -24,9 +24,12 @@ export const Main = styled.main`
 	@media screen and (min-width: 769px) {
 		flex-direction: row;
 		gap: 50px;
-		max-width: 750px;
+		gap: 60px;
+		max-width: 850px;
+		max-height: 80%;
+		margin-top: 5svh;
 		padding: 10px;
-		padding-right: 7%;
+		padding-right: 5%;
 		justify-content: center;
 		border-radius: 12px;
 	    background-color: ${(props) => props.theme.colors.neutral.white};
