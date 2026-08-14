@@ -13,7 +13,7 @@ export const Container = styled.div`
 		background-color: ${(props) => props.theme.colors.neutral.third};
 	}
 `;
-// NOTE remover duplicata de regra
+
 export const Main = styled.main`
 	display: flex;
 	flex-direction: column;
@@ -23,7 +23,6 @@ export const Main = styled.main`
 
 	@media screen and (min-width: 769px) {
 		flex-direction: row;
-		gap: 50px;
 		gap: 60px;
 		max-width: 850px;
 		max-height: 80%;
