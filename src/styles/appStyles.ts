@@ -13,7 +13,7 @@ export const Container = styled.div`
 		background-color: ${(props) => props.theme.colors.neutral.third};
 	}
 `;
-
+// NOTE remover duplicata de regra
 export const Main = styled.main`
 	display: flex;
 	flex-direction: column;
