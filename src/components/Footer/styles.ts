@@ -16,10 +16,13 @@ export const Container = styled.footer`
         }
     }
 
-    @media screen and (min-width: 486px) and (max-width: 671px) {
-        margin-top: 1.5%;
+    @media screen and (min-width: 486px) {
+        margin-top: 8dvh;
     }
-    @media screen and (min-width: 672px) and (max-width: 768px) {
-        margin-top: 6.5%;
+    @media screen and (min-width: 568px){
+        margin-top: 15dvh;
+    }
+    @media screen and (min-width: 700px){
+        margin-top: 20vh;
     }
 `;
