@@ -25,4 +25,7 @@ export const Container = styled.footer`
     @media screen and (min-width: 700px){
         margin-top: 20vh;
     }
+    @media screen and (min-width: 768px){
+        margin-top: 0;
+    }
 `;
