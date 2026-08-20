@@ -1,11 +1,12 @@
 import { createGlobalStyle } from "styled-components";
+import { BASE_URL } from "../store/store";
 
 export const GlobalStyle = createGlobalStyle`
     @font-face {
         font-family: "Ubuntu";
-        src: url("/fonts/Ubuntu-Regular.ttf") format("truetype"),
-            url("/fonts/Ubuntu-Medium.ttf") format("truetype"),
-            url("/fonts/Ubuntu-Bold.ttf") format("truetype");
+        src: url("${BASE_URL}/fonts/Ubuntu-Regular.ttf") format("truetype"),
+            url("${BASE_URL}/fonts/Ubuntu-Medium.ttf") format("truetype"),
+            url("${BASE_URL}/fonts/Ubuntu-Bold.ttf") format("truetype");
         font-weight: normal;
     }
 
@@ -20,7 +21,5 @@ export const GlobalStyle = createGlobalStyle`
         font-family: "Ubuntu";
         width: 100%;
         min-height: 100vh;
-    }
-
-    
+    }    
 `;

@@ -5,7 +5,7 @@ import { Input } from '../../components/Input';
 import { Controller, useFormContext } from 'react-hook-form';
 import type { FormProps } from '../../schemas/schemas';
 import useModality from '../../hook/useModality';
-import { bussinesPlan } from '../../store/store';
+import { BASE_URL, bussinesPlan } from '../../store/store';
 import { useId, useRef } from 'react';
 
 const SecondStep: React.FC = () => {
@@ -62,7 +62,7 @@ const SecondStep: React.FC = () => {
 											}
 										>
 											<Input.Icon
-												source={`/images/icon-${typedPlanType}.svg`}
+												source={`${BASE_URL}images/icon-${typedPlanType}.svg`}
 											/>
 
 											<div>

@@ -2,11 +2,12 @@ import { Container, RestartForm } from './styles';
 import Title from '../../components/Title';
 import Paragraph from '../../components/Paragraph';
 import { PATHS } from '../../routes/paths';
+import { BASE_URL } from '../../store/store';
 
 const Sucess: React.FC = () => {
 	return (
 		<Container>
-			<img src="/images/icon-thank-you.svg" alt=''/>
+			<img src={`${BASE_URL}images/icon-thank-you.svg`} alt=''/>
 
 			<Title>Thank you!</Title>
 			

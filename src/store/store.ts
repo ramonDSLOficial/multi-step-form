@@ -26,3 +26,5 @@ export const bussinesPlan = {
 		yearly: 20,
 	},
 } as const;
+
+export const BASE_URL = import.meta.env.BASE_URL;

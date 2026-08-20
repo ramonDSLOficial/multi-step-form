@@ -9,40 +9,45 @@ import FourthStep from '../pages/FourthStep';
 import Sucess from '../pages/Sucess';
 import Form from '../components/Form';
 
-export const router = createBrowserRouter([
+export const router = createBrowserRouter(
+	[
+		{
+			path: PATHS.home,
+			element: <App />,
+			children: [
+				{
+					element: <Form />,
+					children: [
+						{
+							path: PATHS.steps.first,
+							element: <FirstStep />,
+						},
+						{
+							path: PATHS.steps.second,
+							element: <SecondStep />,
+						},
+						{
+							path: PATHS.steps.third,
+							element: <ThirdStep />,
+						},
+						{
+							path: PATHS.steps.fourth,
+							element: <FourthStep />,
+						},
+						{
+							path: PATHS.steps.success,
+							element: <Sucess />,
+						},
+					],
+				},
+				{
+					path: '*',
+					element: <Navigate to={PATHS.steps.first} />,
+				},
+			],
+		},
+	],
 	{
-		path: PATHS.home,
-		element: <App />,
-		children: [
-			{
-				element: <Form />,
-				children: [
-					{
-						path: PATHS.steps.first,
-						element: <FirstStep />,
-					},
-					{
-						path: PATHS.steps.second,
-						element: <SecondStep />,
-					},
-					{
-						path: PATHS.steps.third,
-						element: <ThirdStep />,
-					},
-					{
-						path: PATHS.steps.fourth,
-						element: <FourthStep />,
-					},
-					{
-						path: PATHS.steps.success,
-						element: <Sucess />,
-					},
-				],
-			},
-			{
-				path: '*',
-				element: <Navigate to={PATHS.steps.first} />,
-			},
-		],
-	},
-]);
+		basename: '/multi-step-form',
+	}
+);
