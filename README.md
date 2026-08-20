@@ -5,7 +5,7 @@ Desafio de nível avançado para construir um formulário com multiplas etapas, 
 
 ## 🔗 Links
 
--   Site: [link do deploy](https://github.com/RamonDSLOficial/Multi-step-form/)
+-   Site: [link do deploy](https://RamonDSLOficial.github.io/Multi-step-form/)
 -   Desafio original: [Frontend Mentor](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ)
 
 ## 🎯 Funcionalidades
@@ -36,7 +36,7 @@ Desafio de nível avançado para construir um formulário com multiplas etapas, 
 ## 🚀 Como rodar o projeto
 
 ```bash
-git clone https://github.com/RamonDSL/Multi-step-form.git
+git clone https://github.com/RamonDSLOficial/Multi-step-form.git
 cd seu-repo
 npm install
 npm run dev
@@ -44,4 +44,4 @@ npm run dev
 
 ## 👤 Autor
 
--   GitHub - [@RamonDSL](https://github.com/RamonDSLOficial)
+-   GitHub - [@RamonDSLOficial](https://github.com/RamonDSLOficial)
