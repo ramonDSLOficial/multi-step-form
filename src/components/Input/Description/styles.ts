@@ -17,9 +17,10 @@ export const Container = styled.p<CommonInputProps>`
                             font-size: 1rem;
                             font-weight: ${props => props.theme.font.weight.terciary};
                             margin-top: 2px;
-
+                            
                             .hidden {
                                 pointer-events: none;
+                                margin-top: 4px;
                             }
                             
                             @media screen and (min-width: 769px) {
